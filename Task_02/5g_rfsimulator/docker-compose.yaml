@@ -265,6 +265,8 @@ services:
             USE_ADDITIONAL_OPTIONS: -E --sa --rfsim -r 106 --numerology 1 -C 3619200000 --nokrnmod
         depends_on:
             - oai-gnb
+        volumes:
+            - ../conf/nrue.uicc.conf:/opt/oai-nr-ue/etc/nr-ue.conf
         networks:
             public_net:
                 ipv4_address: 192.168.71.137

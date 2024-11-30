@@ -76,7 +76,7 @@ deploy_containers() {
 check_connectivity() {
     echo "Checking Internet connectivity from NR-UE container..."
     docker exec -it rfsim5g-oai-nr-ue ping -I oaitun_ue1 -c 10 www.lemonde.fr || {
-        echo "Ping failed! Please check DNS settings."
+        echo "Ping failed!"
         exit 1
     }
     echo "Ping successful!"

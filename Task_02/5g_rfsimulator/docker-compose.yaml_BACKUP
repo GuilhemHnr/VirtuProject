@@ -262,8 +262,7 @@ services:
             DNN: oai
             NSSAI_SST: 1
             NSSAI_SD: 1
-            #USE_ADDITIONAL_OPTIONS: -E --sa --rfsim -r 106 --numerology 1 -C 3619200000 --nokrnmod
-            USE_ADDITIONAL_OPTIONS: -E --rfsim -r 106 --numerology 1 -C 3619200000
+            USE_ADDITIONAL_OPTIONS: -E --sa --rfsim -r 106 --numerology 1 -C 3619200000 --nokrnmod
         depends_on:
             - oai-gnb
         volumes:

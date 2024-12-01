@@ -1,0 +1,33 @@
+==================================
+/proc/sys/kernel/core_pattern=|/usr/share/apport/apport -p%p -s%s -c%c -d%d -P%P -u%u -g%g -- %E
+No configuration file /opt/oai-nr-ue/etc/nr-ue.conf found: attempting to find YAML config
+==================================
+== Configuration file:
+uicc0:
+  imsi: ${FULL_IMSI}
+  key: ${FULL_KEY}
+  opc: ${OPC}
+  dnn: ${DNN}
+  nssai_sst: ${NSSAI_SST}
+  nssai_sd: ${NSSAI_SD}
+==================================
+== Load USRP binaries
+==================================
+== Starting NR UE soft modem
+Additional option(s): -E --sa --rfsim -r 106 --numerology 1 -C 3619200000 --nokrnmod
+/opt/oai-nr-ue/bin/nr-uesoftmodem -O /opt/oai-nr-ue/etc/nr-ue.yaml -E --sa --rfsim -r 106 --numerology 1 -C 3619200000 --nokrnmod
+[UTIL]   running in SA mode (no --phy-test, --do-ra, --nsa option present)
+[0m[UTIL]   threadCreate() for Tpool0_-1: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for Tpool1_-1: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for Tpool2_-1: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for Tpool3_-1: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for Tpool4_-1: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for Tpool5_-1: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for Tpool6_-1: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for Tpool7_-1: creating thread with affinity ffffffff, priority 97
+[0m[OPT]   OPT disabled
+[0m[HW]   Version: Branch: HEAD Abrev. Hash: 03946cd47b Date: Wed Nov 27 08:16:32 2024 +0000
+[0m[UTIL]   Opened socket oaitun_ue1 with fd nas_sock_fd[0]=93
+[0m[PDCP]   UE pdcp will use tun interface
+[0m[INFO  tini (1)] Spawned child process '/opt/oai-nr-ue/bin/entrypoint.sh' with pid '7'
+[INFO  tini (1)] Main child exited with signal (with signal 'Aborted')

@@ -1,0 +1,658 @@
+==================================
+/proc/sys/kernel/core_pattern=|/usr/share/apport/apport -p%p -s%s -c%c -d%d -P%P -u%u -g%g -- %E
+No configuration file /opt/oai-nr-ue/etc/nr-ue.conf found: attempting to find YAML config
+==================================
+== Configuration file:
+uicc0:
+  imsi: "208990100001100"
+  key: "fec86ba6eb707ed08905757b1bb44b8f"
+  opc: "C42449363BBAD02B66D16BC975D77CC1"
+  dnn: "oai"
+  nssai_sst: 1
+  nssai_sd: 1
+==================================
+== Load USRP binaries
+==================================
+== Starting NR UE soft modem
+/opt/oai-nr-ue/bin/nr-uesoftmodem -O /opt/oai-nr-ue/etc/nr-ue.yaml
+[UTIL]   running in SA mode (no --phy-test, --do-ra, --nsa option present)
+[0m[UTIL]   threadCreate() for Tpool0_-1: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for Tpool1_-1: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for Tpool2_-1: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for Tpool3_-1: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for Tpool4_-1: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for Tpool5_-1: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for Tpool6_-1: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for Tpool7_-1: creating thread with affinity ffffffff, priority 97
+[0m[OPT]   OPT disabled
+[0m[HW]   Version: Branch: HEAD Abrev. Hash: 03946cd47b Date: Wed Nov 27 08:16:32 2024 +0000
+[0m[UTIL]   Opened socket oaitun_ue1 with fd nas_sock_fd[0]=93
+[0m[PDCP]   UE pdcp will use tun interface
+[0m[SIM]   UICC simulation: IMSI=208990100001100, IMEISV=6754567890123413, Ki=fec86ba6eb707ed08905757b1bb44b8f, OPc=C42449363BBAD02B66D16BC975D77CC1, DNN=oai, SST=0x01, SD=0x000001
+[0m[NR_MAC]   [UE0] Initializing MAC
+[0m[NR_MAC]   Initializing dl and ul config_request. num_slots = 20
+[0m[RLC]   Activated srb0 for UE 0
+[0m[93m[RLC]   SRB0 already exists for UE 0, do nothing
+[0m[PHY]   Set UE_fo_compensation 0, UE_scan_carrier 0, UE_no_timing_correction 0 
+, chest-freq 0, chest-time 0
+[0m[PHY]   Set UE nb_rx_antenna 1, nb_tx_antenna 1, threequarter_fs 0, ssb_start_subcarrier 516
+[0m[PHY]   SA init parameters. DL freq 0 UL offset 0 SSB numerology 1 N_RB_DL 106
+[0m[PHY]   Init: N_RB_DL 106, first_carrier_offset 1412, nb_prefix_samples 144,nb_prefix_samples0 176, ofdm_symbol_size 2048
+[0m[93m[PHY]   samples_per_subframe 61440/per second 61440000, wCP 57344
+[0m[PHY]   Initializing UE vars for gNB TXant 1, UE RXant 1
+[0m[PHY]   prs_config configuration NOT found..!! Skipped configuring UE for the PRS reception
+[0m[PHY]   UE 0 Setting N_TA_offset to 800 samples (UL Freq 0, N_RB 106, mu 1)
+[0m[PHY]   HW: Configuring card 0, sample_rate 61440000.000000, tx/rx num_channels 1/1, duplex_mode TDD
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_freq -nan Hz, rx_freq -nan Hz, tune_offset 0
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_gain 0, rx_gain 110
+[0m[PHY]   HW: Configuring card 1, sample_rate 61440000.000000, tx/rx num_channels 1/1, duplex_mode TDD
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_freq -nan Hz, rx_freq -nan Hz, tune_offset 0
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_gain 0, rx_gain 110
+[0m[PHY]   HW: Configuring card 2, sample_rate 61440000.000000, tx/rx num_channels 1/1, duplex_mode TDD
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_freq -nan Hz, rx_freq -nan Hz, tune_offset 0
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_gain 0, rx_gain 110
+[0m[PHY]   HW: Configuring card 3, sample_rate 61440000.000000, tx/rx num_channels 1/1, duplex_mode TDD
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_freq -nan Hz, rx_freq -nan Hz, tune_offset 0
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_gain 0, rx_gain 110
+[0m[PHY]   HW: Configuring card 4, sample_rate 61440000.000000, tx/rx num_channels 1/1, duplex_mode TDD
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_freq -nan Hz, rx_freq -nan Hz, tune_offset 0
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_gain 0, rx_gain 110
+[0m[PHY]   HW: Configuring card 5, sample_rate 61440000.000000, tx/rx num_channels 1/1, duplex_mode TDD
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_freq -nan Hz, rx_freq -nan Hz, tune_offset 0
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_gain 0, rx_gain 110
+[0m[PHY]   HW: Configuring card 6, sample_rate 61440000.000000, tx/rx num_channels 1/1, duplex_mode TDD
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_freq -nan Hz, rx_freq -nan Hz, tune_offset 0
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_gain 0, rx_gain 110
+[0m[PHY]   HW: Configuring card 7, sample_rate 61440000.000000, tx/rx num_channels 1/1, duplex_mode TDD
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_freq -nan Hz, rx_freq -nan Hz, tune_offset 0
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_gain 0, rx_gain 110
+[0m[PHY]   Intializing UE Threads for instance 0 ...
+[0m[UTIL]   threadCreate() for UEthread_0: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for L1_UE_stats_0: creating thread with affinity ffffffff, priority 1
+[0m[NR_RRC]   create TASK_RRC_NRUE 
+[0m[UTIL]   threadCreate() for TASK_RRC_NRUE: creating thread with affinity ffffffff, priority 50
+[0m[UTIL]   threadCreate() for TASK_NAS_NRUE: creating thread with affinity ffffffff, priority 50
+[0m[HW]   openair0_cfg[0].sdr_addrs == 'type=b200'
+[0m[HW]   openair0_cfg[0].clock_source == '0' (internal = 0, external = 1)
+[0m[HW]   UHD version 4.4.0.HEAD-0-g5fac246b (4.4.0)
+[0m[HW]   Checking for USRP with args type=b200
+[0m[1;31m[HW]   No USRP Device Found.
+ [0mGNU gdb (Ubuntu 12.1-0ubuntu1~22.04.2) 12.1
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+Attaching to process 7
+[New LWP 11]
+[New LWP 12]
+[New LWP 13]
+[New LWP 14]
+[New LWP 15]
+[New LWP 16]
+[New LWP 17]
+[New LWP 18]
+[New LWP 19]
+[New LWP 20]
+[New LWP 21]
+[New LWP 22]
+[New LWP 23]
+[New LWP 24]
+[New LWP 25]
+[New LWP 26]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007798bfd8f7f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7fff590d6920, rem=rem@entry=0x7fff590d6920) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+
+Thread 17 (Thread 0x7798a7e00640 (LWP 26) "TASK_NAS_NRUE"):
+#0  0x00007798bfdcfe2e in epoll_wait (epfd=91, events=0x7798a7dff7d0, maxevents=1, timeout=-1) at ../sysdeps/unix/sysv/linux/epoll_wait.c:30
+#1  0x00005e802690568a in itti_get_events_locked (task_id=TASK_NAS_NRUE, events=0x7798a7dff7d0, max_events=1) at /oai-ran/common/utils/ocp_itti/intertask_interface.cpp:228
+#2  0x00005e80269060bb in itti_receive_msg (task_id=task_id@entry=TASK_NAS_NRUE, received_msg=received_msg@entry=0x7798a7dff878) at /oai-ran/common/utils/ocp_itti/intertask_interface.cpp:274
+#3  0x00005e802692560a in nas_nrue (args_p=<optimized out>) at /oai-ran/openair3/NAS/NR_UE/nr_nas_msg.c:1242
+#4  0x00005e8026928c77 in nas_nrue_task (args_p=<optimized out>) at /oai-ran/openair3/NAS/NR_UE/nr_nas_msg.c:1214
+#5  0x00007798bfd3eac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#6  0x00007798bfdd0850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 16 (Thread 0x7798ae600640 (LWP 25) "TASK_RRC_NRUE"):
+#0  0x00007798bfdcfe2e in epoll_wait (epfd=71, events=0x7798ae5ff7c0, maxevents=1, timeout=-1) at ../sysdeps/unix/sysv/linux/epoll_wait.c:30
+#1  0x00005e802690568a in itti_get_events_locked (task_id=TASK_RRC_NRUE, events=0x7798ae5ff7c0, max_events=1) at /oai-ran/common/utils/ocp_itti/intertask_interface.cpp:228
+#2  0x00005e80269060bb in itti_receive_msg (task_id=task_id@entry=TASK_RRC_NRUE, received_msg=received_msg@entry=0x7798ae5ff878) at /oai-ran/common/utils/ocp_itti/intertask_interface.cpp:274
+#3  0x00005e8026870be2 in rrc_nrue (notUsed=<optimized out>) at /oai-ran/openair2/RRC/NR_UE/rrc_UE.c:1864
+#4  0x00005e80268733df in rrc_nrue_task (args_p=<optimized out>) at /oai-ran/openair2/RRC/NR_UE/rrc_UE.c:1857
+#5  0x00007798bfd3eac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#6  0x00007798bfdd0850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 15 (Thread 0x7798a6600640 (LWP 24) "L1_UE_stats_0"):
+#0  0x00007798bfd8f7f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7798a65fb9c0, rem=rem@entry=0x7798a65fb9c0) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+#1  0x00007798bfd94677 in __GI___nanosleep (req=req@entry=0x7798a65fb9c0, rem=rem@entry=0x7798a65fb9c0) at ../sysdeps/unix/sysv/linux/nanosleep.c:25
+#2  0x00007798bfd945ae in __sleep (seconds=0, seconds@entry=1) at ../sysdeps/posix/sleep.c:55
+#3  0x00005e80267a13aa in nrL1_UE_stats_thread (param=0x7798ba800010) at /oai-ran/executables/nr-ue.c:129
+#4  0x00007798bfd3eac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#5  0x00007798bfdd0850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 14 (Thread 0x7798af000640 (LWP 23) "UEthread_0"):
+#0  0x00007798bfd9442f in __GI___wait4 (pid=37, stat_loc=stat_loc@entry=0x7798aeffc638, options=options@entry=0, usage=usage@entry=0x0) at ../sysdeps/unix/sysv/linux/wait4.c:30
+#1  0x00007798bfd943ab in __GI___waitpid (pid=<optimized out>, stat_loc=stat_loc@entry=0x7798aeffc638, options=options@entry=0) at ./posix/waitpid.c:38
+#2  0x00007798bfcfabdb in do_system (line=line@entry=0x7798aeffc9f0 "gdb -ex='set confirm off' -ex 'thread apply all bt' -ex q -p 7 < /dev/null") at ../sysdeps/posix/system.c:171
+#3  0x00007798bfcfad7e in __libc_system (line=line@entry=0x7798aeffc9f0 "gdb -ex='set confirm off' -ex 'thread apply all bt' -ex q -p 7 < /dev/null") at ../sysdeps/posix/system.c:207
+#4  0x00005e80267a9fb5 in openair0_device_load (device=device@entry=0x7798baada760, openair0_cfg=<optimized out>) at /oai-ran/radio/COMMON/common_lib.c:155
+#5  0x00005e80267a3605 in UE_thread (arg=0x7798ba800010) at /oai-ran/executables/nr-ue.c:814
+#6  0x00007798bfd3eac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#7  0x00007798bfdd0850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 13 (Thread 0x7798b8800640 (LWP 22) "ue_tun_read"):
+#0  __GI___libc_read (nbytes=18000, buf=0x7798b87fb7c0, fd=93) at ../sysdeps/unix/sysv/linux/read.c:26
+#1  __GI___libc_read (fd=93, buf=buf@entry=0x7798b87fb7c0, nbytes=nbytes@entry=18000) at ../sysdeps/unix/sysv/linux/read.c:24
+#2  0x00005e80268496a1 in read (__nbytes=18000, __buf=0x7798b87fb7c0, __fd=<optimized out>) at /usr/include/x86_64-linux-gnu/bits/unistd.h:38
+#3  ue_tun_read_thread (_=<optimized out>) at /oai-ran/openair2/LAYER2/nr_pdcp/nr_pdcp_oai_api.c:503
+#4  0x00007798bfd3eac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#5  0x00007798bfdd0850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 12 (Thread 0x7798b9200640 (LWP 21) "pdcp_timer"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5e802725a668 <timer_thread_cond+40>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x5e802725a668 <timer_thread_cond+40>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5e802725a668 <timer_thread_cond+40>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007798bfd3da41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5e802725a680 <timer_thread_mutex>, cond=0x5e802725a640 <timer_thread_cond>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x5e802725a640 <timer_thread_cond>, mutex=mutex@entry=0x5e802725a680 <timer_thread_mutex>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005e8026855603 in nr_pdcp_timer_thread (_nr_pdcp_ue_manager=0x5e8027843370) at /oai-ran/openair2/LAYER2/nr_pdcp/nr_pdcp_timer_thread.c:48
+#6  0x00007798bfd3eac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#7  0x00007798bfdd0850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 11 (Thread 0x7798b9c00640 (LWP 20) "PDCP data ind"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5e8027197078 <pq+720088>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x5e8027197078 <pq+720088>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5e8027197078 <pq+720088>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007798bfd3da41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5e8027197028 <pq+720008>, cond=0x5e8027197050 <pq+720048>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x5e8027197050 <pq+720048>, mutex=mutex@entry=0x5e8027197028 <pq+720008>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005e802684b3ab in pdcp_data_ind_thread (_=<optimized out>) at /oai-ran/openair2/LAYER2/nr_pdcp/nr_pdcp_oai_api.c:326
+#6  0x00007798bfd3eac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#7  0x00007798bfdd0850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 10 (Thread 0x7798ba600640 (LWP 19) "RLC queue"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5e802725a5d8 <q+800088>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x5e802725a5d8 <q+800088>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5e802725a5d8 <q+800088>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007798bfd3da41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5e802725a588 <q+800008>, cond=0x5e802725a5b0 <q+800048>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x5e802725a5b0 <q+800048>, mutex=mutex@entry=0x5e802725a588 <q+800008>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005e802684954b in rlc_data_req_thread (_=<optimized out>) at /oai-ran/openair2/LAYER2/nr_pdcp/nr_pdcp_oai_api.c:158
+#6  0x00007798bfd3eac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#7  0x00007798bfdd0850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 9 (Thread 0x7798bb600640 (LWP 18) "Tpool7_-1"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5e802707a2b0 <nrUE_params+144>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x5e802707a2b0 <nrUE_params+144>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5e802707a2b0 <nrUE_params+144>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007798bfd3da41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5e802707a260 <nrUE_params+64>, cond=0x5e802707a288 <nrUE_params+104>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x5e802707a288 <nrUE_params+104>, mutex=mutex@entry=0x5e802707a260 <nrUE_params+64>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005e8026ac5cdb in pullNotifiedFifoRemember (thr=<optimized out>, nf=<optimized out>) at /oai-ran/common/utils/threadPool/thread-pool.c:37
+#6  one_thread (arg=0x5e802783d340) at /oai-ran/common/utils/threadPool/thread-pool.c:63
+#7  0x00007798bfd3eac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#8  0x00007798bfdd0850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 8 (Thread 0x7798bc000640 (LWP 17) "Tpool6_-1"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5e802707a2b0 <nrUE_params+144>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x5e802707a2b0 <nrUE_params+144>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5e802707a2b0 <nrUE_params+144>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007798bfd3da41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5e802707a260 <nrUE_params+64>, cond=0x5e802707a288 <nrUE_params+104>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x5e802707a288 <nrUE_params+104>, mutex=mutex@entry=0x5e802707a260 <nrUE_params+64>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005e8026ac5cdb in pullNotifiedFifoRemember (thr=<optimized out>, nf=<optimized out>) at /oai-ran/common/utils/threadPool/thread-pool.c:37
+#6  one_thread (arg=0x5e802783d0d0) at /oai-ran/common/utils/threadPool/thread-pool.c:63
+#7  0x00007798bfd3eac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#8  0x00007798bfdd0850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 7 (Thread 0x7798bca00640 (LWP 16) "Tpool5_-1"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5e802707a2b0 <nrUE_params+144>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x5e802707a2b0 <nrUE_params+144>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5e802707a2b0 <nrUE_params+144>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007798bfd3da41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5e802707a260 <nrUE_params+64>, cond=0x5e802707a288 <nrUE_params+104>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x5e802707a288 <nrUE_params+104>, mutex=mutex@entry=0x5e802707a260 <nrUE_params+64>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005e8026ac5cdb in pullNotifiedFifoRemember (thr=<optimized out>, nf=<optimized out>) at /oai-ran/common/utils/threadPool/thread-pool.c:37
+#6  one_thread (arg=0x5e802783ce60) at /oai-ran/common/utils/threadPool/thread-pool.c:63
+#7  0x00007798bfd3eac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#8  0x00007798bfdd0850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 6 (Thread 0x7798bd400640 (LWP 15) "Tpool4_-1"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5e802707a2b0 <nrUE_params+144>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x5e802707a2b0 <nrUE_params+144>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5e802707a2b0 <nrUE_params+144>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007798bfd3da41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5e802707a260 <nrUE_params+64>, cond=0x5e802707a288 <nrUE_params+104>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x5e802707a288 <nrUE_params+104>, mutex=mutex@entry=0x5e802707a260 <nrUE_params+64>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005e8026ac5cdb in pullNotifiedFifoRemember (thr=<optimized out>, nf=<optimized out>) at /oai-ran/common/utils/threadPool/thread-pool.c:37
+#6  one_thread (arg=0x5e802783cbf0) at /oai-ran/common/utils/threadPool/thread-pool.c:63
+#7  0x00007798bfd3eac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#8  0x00007798bfdd0850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 5 (Thread 0x7798bde00640 (LWP 14) "Tpool3_-1"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5e802707a2b0 <nrUE_params+144>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x5e802707a2b0 <nrUE_params+144>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5e802707a2b0 <nrUE_params+144>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007798bfd3da41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5e802707a260 <nrUE_params+64>, cond=0x5e802707a288 <nrUE_params+104>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x5e802707a288 <nrUE_params+104>, mutex=mutex@entry=0x5e802707a260 <nrUE_params+64>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005e8026ac5cdb in pullNotifiedFifoRemember (thr=<optimized out>, nf=<optimized out>) at /oai-ran/common/utils/threadPool/thread-pool.c:37
+#6  one_thread (arg=0x5e802783c980) at /oai-ran/common/utils/threadPool/thread-pool.c:63
+#7  0x00007798bfd3eac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#8  0x00007798bfdd0850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 4 (Thread 0x7798be800640 (LWP 13) "Tpool2_-1"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5e802707a2b0 <nrUE_params+144>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x5e802707a2b0 <nrUE_params+144>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5e802707a2b0 <nrUE_params+144>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007798bfd3da41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5e802707a260 <nrUE_params+64>, cond=0x5e802707a288 <nrUE_params+104>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x5e802707a288 <nrUE_params+104>, mutex=mutex@entry=0x5e802707a260 <nrUE_params+64>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005e8026ac5cdb in pullNotifiedFifoRemember (thr=<optimized out>, nf=<optimized out>) at /oai-ran/common/utils/threadPool/thread-pool.c:37
+#6  one_thread (arg=0x5e802783c710) at /oai-ran/common/utils/threadPool/thread-pool.c:63
+#7  0x00007798bfd3eac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#8  0x00007798bfdd0850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 3 (Thread 0x7798bf200640 (LWP 12) "Tpool1_-1"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5e802707a2b0 <nrUE_params+144>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x5e802707a2b0 <nrUE_params+144>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5e802707a2b0 <nrUE_params+144>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007798bfd3da41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5e802707a260 <nrUE_params+64>, cond=0x5e802707a288 <nrUE_params+104>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x5e802707a288 <nrUE_params+104>, mutex=mutex@entry=0x5e802707a260 <nrUE_params+64>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005e8026ac5cdb in pullNotifiedFifoRemember (thr=<optimized out>, nf=<optimized out>) at /oai-ran/common/utils/threadPool/thread-pool.c:37
+#6  one_thread (arg=0x5e802783c4a0) at /oai-ran/common/utils/threadPool/thread-pool.c:63
+#7  0x00007798bfd3eac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#8  0x00007798bfdd0850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 2 (Thread 0x7798bfc00640 (LWP 11) "Tpool0_-1"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5e802707a2b0 <nrUE_params+144>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x5e802707a2b0 <nrUE_params+144>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5e802707a2b0 <nrUE_params+144>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007798bfd3da41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5e802707a260 <nrUE_params+64>, cond=0x5e802707a288 <nrUE_params+104>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x5e802707a288 <nrUE_params+104>, mutex=mutex@entry=0x5e802707a260 <nrUE_params+64>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005e8026ac5cdb in pullNotifiedFifoRemember (thr=<optimized out>, nf=<optimized out>) at /oai-ran/common/utils/threadPool/thread-pool.c:37
+#6  one_thread (arg=0x5e802783c230) at /oai-ran/common/utils/threadPool/thread-pool.c:63
+#7  0x00007798bfd3eac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#8  0x00007798bfdd0850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 1 (Thread 0x7798bfca7740 (LWP 7) "nr-uesoftmodem"):
+#0  0x00007798bfd8f7f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7fff590d6920, rem=rem@entry=0x7fff590d6920) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+#1  0x00007798bfd94677 in __GI___nanosleep (req=req@entry=0x7fff590d6920, rem=rem@entry=0x7fff590d6920) at ../sysdeps/unix/sysv/linux/nanosleep.c:25
+#2  0x00007798bfd945ae in __sleep (seconds=0, seconds@entry=2) at ../sysdeps/posix/sleep.c:55
+#3  0x00005e802679ae0e in main (argc=<optimized out>, argv=<optimized out>) at /oai-ran/executables/nr-uesoftmodem.c:547
+Detaching from program: /opt/oai-nr-ue/bin/nr-uesoftmodem, process 7
+[Inferior 1 (process 7) detached]
+CMDLINE: "/opt/oai-nr-ue/bin/nr-uesoftmodem" "-O" "/opt/oai-nr-ue/etc/nr-ue.yaml" 
+[CONFIG] function config_yaml_init returned 0
+UE threads created by 7
+TYPE <CTRL-C> TO TERMINATE
+[HW]   releasing USRP
+[0m[INFO  tini (1)] Spawned child process '/opt/oai-nr-ue/bin/entrypoint.sh' with pid '7'
+[INFO  tini (1)] Main child exited with signal (with signal 'Segmentation fault')
+==================================
+/proc/sys/kernel/core_pattern=|/usr/share/apport/apport -p%p -s%s -c%c -d%d -P%P -u%u -g%g -- %E
+No configuration file /opt/oai-nr-ue/etc/nr-ue.conf found: attempting to find YAML config
+==================================
+== Configuration file:
+uicc0:
+  imsi: "208990100001100"
+  key: "fec86ba6eb707ed08905757b1bb44b8f"
+  opc: "C42449363BBAD02B66D16BC975D77CC1"
+  dnn: "oai"
+  nssai_sst: 1
+  nssai_sd: 1
+
+thread-pool: "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1"
+
+#/* configuration for channel modelisation */
+#/* To be included in main config file when */
+#/* channel modelisation is used (rfsimulator with chanmod options enabled) */
+channelmod:
+  max_chan: 10
+  modellist: modellist_rfsimu_1
+  modellist_rfsimu_1:
+    - model_name: rfsimu_channel_enB0
+      type: AWGN
+      ploss_dB: 20
+      noise_power_dB: -4
+      forgetfact: 0
+      offset: 0
+      ds_tdl: 0
+    - model_name: rfsimu_channel_ue0
+      type: AWGN
+      ploss_dB: 20
+      nose_power_dB: -2
+      forgetfact: 0
+      offset: 0
+      ds_tdl: 0
+==================================
+== Load USRP binaries
+==================================
+== Starting NR UE soft modem
+/opt/oai-nr-ue/bin/nr-uesoftmodem -O /opt/oai-nr-ue/etc/nr-ue.yaml
+[UTIL]   running in SA mode (no --phy-test, --do-ra, --nsa option present)
+[0m[UTIL]   threadCreate() for Tpool0_-1: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for Tpool1_-1: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for Tpool2_-1: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for Tpool3_-1: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for Tpool4_-1: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for Tpool5_-1: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for Tpool6_-1: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for Tpool7_-1: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for Tpool8_-1: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for Tpool9_-1: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for Tpool10_-1: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for Tpool11_-1: creating thread with affinity ffffffff, priority 97
+[0m[OPT]   OPT disabled
+[0m[HW]   Version: Branch: HEAD Abrev. Hash: 03946cd47b Date: Wed Nov 27 08:16:32 2024 +0000
+[0m[UTIL]   Opened socket oaitun_ue1 with fd nas_sock_fd[0]=93
+[0m[PDCP]   UE pdcp will use tun interface
+[0m[SIM]   UICC simulation: IMSI=208990100001100, IMEISV=6754567890123413, Ki=fec86ba6eb707ed08905757b1bb44b8f, OPc=C42449363BBAD02B66D16BC975D77CC1, DNN=oai, SST=0x01, SD=0x000001
+[0m[NR_MAC]   [UE0] Initializing MAC
+[0m[NR_MAC]   Initializing dl and ul config_request. num_slots = 20
+[0m[RLC]   Activated srb0 for UE 0
+[0m[93m[RLC]   SRB0 already exists for UE 0, do nothing
+[0m[PHY]   Set UE_fo_compensation 0, UE_scan_carrier 0, UE_no_timing_correction 0 
+, chest-freq 0, chest-time 0
+[0m[PHY]   Set UE nb_rx_antenna 1, nb_tx_antenna 1, threequarter_fs 0, ssb_start_subcarrier 516
+[0m[PHY]   SA init parameters. DL freq 0 UL offset 0 SSB numerology 1 N_RB_DL 106
+[0m[PHY]   Init: N_RB_DL 106, first_carrier_offset 1412, nb_prefix_samples 144,nb_prefix_samples0 176, ofdm_symbol_size 2048
+[0m[93m[PHY]   samples_per_subframe 61440/per second 61440000, wCP 57344
+[0m[PHY]   Initializing UE vars for gNB TXant 1, UE RXant 1
+[0m[PHY]   prs_config configuration NOT found..!! Skipped configuring UE for the PRS reception
+[0m[PHY]   UE 0 Setting N_TA_offset to 800 samples (UL Freq 0, N_RB 106, mu 1)
+[0m[PHY]   HW: Configuring card 0, sample_rate 61440000.000000, tx/rx num_channels 1/1, duplex_mode TDD
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_freq -nan Hz, rx_freq -nan Hz, tune_offset 0
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_gain 0, rx_gain 110
+[0m[PHY]   HW: Configuring card 1, sample_rate 61440000.000000, tx/rx num_channels 1/1, duplex_mode TDD
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_freq -nan Hz, rx_freq -nan Hz, tune_offset 0
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_gain 0, rx_gain 110
+[0m[PHY]   HW: Configuring card 2, sample_rate 61440000.000000, tx/rx num_channels 1/1, duplex_mode TDD
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_freq -nan Hz, rx_freq -nan Hz, tune_offset 0
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_gain 0, rx_gain 110
+[0m[PHY]   HW: Configuring card 3, sample_rate 61440000.000000, tx/rx num_channels 1/1, duplex_mode TDD
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_freq -nan Hz, rx_freq -nan Hz, tune_offset 0
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_gain 0, rx_gain 110
+[0m[PHY]   HW: Configuring card 4, sample_rate 61440000.000000, tx/rx num_channels 1/1, duplex_mode TDD
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_freq -nan Hz, rx_freq -nan Hz, tune_offset 0
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_gain 0, rx_gain 110
+[0m[PHY]   HW: Configuring card 5, sample_rate 61440000.000000, tx/rx num_channels 1/1, duplex_mode TDD
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_freq -nan Hz, rx_freq -nan Hz, tune_offset 0
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_gain 0, rx_gain 110
+[0m[PHY]   HW: Configuring card 6, sample_rate 61440000.000000, tx/rx num_channels 1/1, duplex_mode TDD
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_freq -nan Hz, rx_freq -nan Hz, tune_offset 0
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_gain 0, rx_gain 110
+[0m[PHY]   HW: Configuring card 7, sample_rate 61440000.000000, tx/rx num_channels 1/1, duplex_mode TDD
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_freq -nan Hz, rx_freq -nan Hz, tune_offset 0
+[0m[PHY]   HW: Configuring channel 0 (rf_chain 0): setting tx_gain 0, rx_gain 110
+[0m[PHY]   Intializing UE Threads for instance 0 ...
+[0m[UTIL]   threadCreate() for UEthread_0: creating thread with affinity ffffffff, priority 97
+[0m[UTIL]   threadCreate() for L1_UE_stats_0: creating thread with affinity ffffffff, priority 1
+[0m[NR_RRC]   create TASK_RRC_NRUE 
+[0m[UTIL]   threadCreate() for TASK_RRC_NRUE: creating thread with affinity ffffffff, priority 50
+[0m[UTIL]   threadCreate() for TASK_NAS_NRUE: creating thread with affinity ffffffff, priority 50
+[0m[HW]   openair0_cfg[0].sdr_addrs == 'type=b200'
+[0m[HW]   openair0_cfg[0].clock_source == '0' (internal = 0, external = 1)
+[0m[HW]   UHD version 4.4.0.HEAD-0-g5fac246b (4.4.0)
+[0m[HW]   Checking for USRP with args type=b200
+[0m[1;31m[HW]   No USRP Device Found.
+ [0mGNU gdb (Ubuntu 12.1-0ubuntu1~22.04.2) 12.1
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+Attaching to process 7
+[New LWP 11]
+[New LWP 12]
+[New LWP 13]
+[New LWP 14]
+[New LWP 15]
+[New LWP 16]
+[New LWP 17]
+[New LWP 18]
+[New LWP 19]
+[New LWP 20]
+[New LWP 21]
+[New LWP 22]
+[New LWP 23]
+[New LWP 24]
+[New LWP 25]
+[New LWP 26]
+[New LWP 27]
+[New LWP 28]
+[New LWP 29]
+[New LWP 30]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007931a816b7f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7ffe2088b620, rem=rem@entry=0x7ffe2088b620) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+
+Thread 21 (Thread 0x793191a00640 (LWP 30) "TASK_NAS_NRUE"):
+#0  0x00007931a81abe2e in epoll_wait (epfd=91, events=0x7931919ff7d0, maxevents=1, timeout=-1) at ../sysdeps/unix/sysv/linux/epoll_wait.c:30
+#1  0x00005adde33dd68a in itti_get_events_locked (task_id=TASK_NAS_NRUE, events=0x7931919ff7d0, max_events=1) at /oai-ran/common/utils/ocp_itti/intertask_interface.cpp:228
+#2  0x00005adde33de0bb in itti_receive_msg (task_id=task_id@entry=TASK_NAS_NRUE, received_msg=received_msg@entry=0x7931919ff878) at /oai-ran/common/utils/ocp_itti/intertask_interface.cpp:274
+#3  0x00005adde33fd60a in nas_nrue (args_p=<optimized out>) at /oai-ran/openair3/NAS/NR_UE/nr_nas_msg.c:1242
+#4  0x00005adde3400c77 in nas_nrue_task (args_p=<optimized out>) at /oai-ran/openair3/NAS/NR_UE/nr_nas_msg.c:1214
+#5  0x00007931a811aac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#6  0x00007931a81ac850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 20 (Thread 0x793193800640 (LWP 29) "TASK_RRC_NRUE"):
+#0  0x00007931a81abe2e in epoll_wait (epfd=71, events=0x7931937ff7c0, maxevents=1, timeout=-1) at ../sysdeps/unix/sysv/linux/epoll_wait.c:30
+#1  0x00005adde33dd68a in itti_get_events_locked (task_id=TASK_RRC_NRUE, events=0x7931937ff7c0, max_events=1) at /oai-ran/common/utils/ocp_itti/intertask_interface.cpp:228
+#2  0x00005adde33de0bb in itti_receive_msg (task_id=task_id@entry=TASK_RRC_NRUE, received_msg=received_msg@entry=0x7931937ff878) at /oai-ran/common/utils/ocp_itti/intertask_interface.cpp:274
+#3  0x00005adde3348be2 in rrc_nrue (notUsed=<optimized out>) at /oai-ran/openair2/RRC/NR_UE/rrc_UE.c:1864
+#4  0x00005adde334b3df in rrc_nrue_task (args_p=<optimized out>) at /oai-ran/openair2/RRC/NR_UE/rrc_UE.c:1857
+#5  0x00007931a811aac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#6  0x00007931a81ac850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 19 (Thread 0x793194200640 (LWP 28) "L1_UE_stats_0"):
+#0  0x00007931a816b7f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7931941fb9c0, rem=rem@entry=0x7931941fb9c0) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+#1  0x00007931a8170677 in __GI___nanosleep (req=req@entry=0x7931941fb9c0, rem=rem@entry=0x7931941fb9c0) at ../sysdeps/unix/sysv/linux/nanosleep.c:25
+#2  0x00007931a81705ae in __sleep (seconds=0, seconds@entry=1) at ../sysdeps/posix/sleep.c:55
+#3  0x00005adde32793aa in nrL1_UE_stats_thread (param=0x7931a0400010) at /oai-ran/executables/nr-ue.c:129
+#4  0x00007931a811aac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#5  0x00007931a81ac850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 18 (Thread 0x793194c00640 (LWP 27) "UEthread_0"):
+#0  0x00007931a817042f in __GI___wait4 (pid=41, stat_loc=stat_loc@entry=0x793194bfc638, options=options@entry=0, usage=usage@entry=0x0) at ../sysdeps/unix/sysv/linux/wait4.c:30
+#1  0x00007931a81703ab in __GI___waitpid (pid=<optimized out>, stat_loc=stat_loc@entry=0x793194bfc638, options=options@entry=0) at ./posix/waitpid.c:38
+#2  0x00007931a80d6bdb in do_system (line=line@entry=0x793194bfc9f0 "gdb -ex='set confirm off' -ex 'thread apply all bt' -ex q -p 7 < /dev/null") at ../sysdeps/posix/system.c:171
+#3  0x00007931a80d6d7e in __libc_system (line=line@entry=0x793194bfc9f0 "gdb -ex='set confirm off' -ex 'thread apply all bt' -ex q -p 7 < /dev/null") at ../sysdeps/posix/system.c:207
+#4  0x00005adde3281fb5 in openair0_device_load (device=device@entry=0x7931a06da760, openair0_cfg=<optimized out>) at /oai-ran/radio/COMMON/common_lib.c:155
+#5  0x00005adde327b605 in UE_thread (arg=0x7931a0400010) at /oai-ran/executables/nr-ue.c:814
+#6  0x00007931a811aac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#7  0x00007931a81ac850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 17 (Thread 0x79319e400640 (LWP 26) "ue_tun_read"):
+#0  __GI___libc_read (nbytes=18000, buf=0x79319e3fb7c0, fd=93) at ../sysdeps/unix/sysv/linux/read.c:26
+#1  __GI___libc_read (fd=93, buf=buf@entry=0x79319e3fb7c0, nbytes=nbytes@entry=18000) at ../sysdeps/unix/sysv/linux/read.c:24
+#2  0x00005adde33216a1 in read (__nbytes=18000, __buf=0x79319e3fb7c0, __fd=<optimized out>) at /usr/include/x86_64-linux-gnu/bits/unistd.h:38
+#3  ue_tun_read_thread (_=<optimized out>) at /oai-ran/openair2/LAYER2/nr_pdcp/nr_pdcp_oai_api.c:503
+#4  0x00007931a811aac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#5  0x00007931a81ac850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 16 (Thread 0x79319ee00640 (LWP 25) "pdcp_timer"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5adde3d32668 <timer_thread_cond+40>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x5adde3d32668 <timer_thread_cond+40>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5adde3d32668 <timer_thread_cond+40>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007931a8119a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5adde3d32680 <timer_thread_mutex>, cond=0x5adde3d32640 <timer_thread_cond>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x5adde3d32640 <timer_thread_cond>, mutex=mutex@entry=0x5adde3d32680 <timer_thread_mutex>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005adde332d603 in nr_pdcp_timer_thread (_nr_pdcp_ue_manager=0x5adde4ce43a0) at /oai-ran/openair2/LAYER2/nr_pdcp/nr_pdcp_timer_thread.c:48
+#6  0x00007931a811aac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#7  0x00007931a81ac850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 15 (Thread 0x79319f800640 (LWP 24) "PDCP data ind"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5adde3c6f078 <pq+720088>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x5adde3c6f078 <pq+720088>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5adde3c6f078 <pq+720088>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007931a8119a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5adde3c6f028 <pq+720008>, cond=0x5adde3c6f050 <pq+720048>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x5adde3c6f050 <pq+720048>, mutex=mutex@entry=0x5adde3c6f028 <pq+720008>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005adde33233ab in pdcp_data_ind_thread (_=<optimized out>) at /oai-ran/openair2/LAYER2/nr_pdcp/nr_pdcp_oai_api.c:326
+#6  0x00007931a811aac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#7  0x00007931a81ac850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 14 (Thread 0x7931a0200640 (LWP 23) "RLC queue"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5adde3d325d8 <q+800088>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x5adde3d325d8 <q+800088>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5adde3d325d8 <q+800088>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007931a8119a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5adde3d32588 <q+800008>, cond=0x5adde3d325b0 <q+800048>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x5adde3d325b0 <q+800048>, mutex=mutex@entry=0x5adde3d32588 <q+800008>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005adde332154b in rlc_data_req_thread (_=<optimized out>) at /oai-ran/openair2/LAYER2/nr_pdcp/nr_pdcp_oai_api.c:158
+#6  0x00007931a811aac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#7  0x00007931a81ac850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 13 (Thread 0x7931a1200640 (LWP 22) "Tpool11_-1"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5adde3b522b0 <nrUE_params+144>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x5adde3b522b0 <nrUE_params+144>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5adde3b522b0 <nrUE_params+144>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007931a8119a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5adde3b52260 <nrUE_params+64>, cond=0x5adde3b52288 <nrUE_params+104>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x5adde3b52288 <nrUE_params+104>, mutex=mutex@entry=0x5adde3b52260 <nrUE_params+64>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005adde359dcdb in pullNotifiedFifoRemember (thr=<optimized out>, nf=<optimized out>) at /oai-ran/common/utils/threadPool/thread-pool.c:37
+#6  one_thread (arg=0x5adde4cfde00) at /oai-ran/common/utils/threadPool/thread-pool.c:63
+#7  0x00007931a811aac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#8  0x00007931a81ac850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 12 (Thread 0x7931a1c00640 (LWP 21) "Tpool10_-1"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5adde3b522b0 <nrUE_params+144>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x5adde3b522b0 <nrUE_params+144>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5adde3b522b0 <nrUE_params+144>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007931a8119a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5adde3b52260 <nrUE_params+64>, cond=0x5adde3b52288 <nrUE_params+104>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x5adde3b52288 <nrUE_params+104>, mutex=mutex@entry=0x5adde3b52260 <nrUE_params+64>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005adde359dcdb in pullNotifiedFifoRemember (thr=<optimized out>, nf=<optimized out>) at /oai-ran/common/utils/threadPool/thread-pool.c:37
+#6  one_thread (arg=0x5adde4cfdb90) at /oai-ran/common/utils/threadPool/thread-pool.c:63
+#7  0x00007931a811aac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#8  0x00007931a81ac850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 11 (Thread 0x7931a2600640 (LWP 20) "Tpool9_-1"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5adde3b522b0 <nrUE_params+144>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x5adde3b522b0 <nrUE_params+144>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5adde3b522b0 <nrUE_params+144>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007931a8119a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5adde3b52260 <nrUE_params+64>, cond=0x5adde3b52288 <nrUE_params+104>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x5adde3b52288 <nrUE_params+104>, mutex=mutex@entry=0x5adde3b52260 <nrUE_params+64>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005adde359dcdb in pullNotifiedFifoRemember (thr=<optimized out>, nf=<optimized out>) at /oai-ran/common/utils/threadPool/thread-pool.c:37
+#6  one_thread (arg=0x5adde4cfd920) at /oai-ran/common/utils/threadPool/thread-pool.c:63
+#7  0x00007931a811aac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#8  0x00007931a81ac850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 10 (Thread 0x7931a3000640 (LWP 19) "Tpool8_-1"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5adde3b522b0 <nrUE_params+144>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x5adde3b522b0 <nrUE_params+144>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5adde3b522b0 <nrUE_params+144>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007931a8119a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5adde3b52260 <nrUE_params+64>, cond=0x5adde3b52288 <nrUE_params+104>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x5adde3b52288 <nrUE_params+104>, mutex=mutex@entry=0x5adde3b52260 <nrUE_params+64>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005adde359dcdb in pullNotifiedFifoRemember (thr=<optimized out>, nf=<optimized out>) at /oai-ran/common/utils/threadPool/thread-pool.c:37
+#6  one_thread (arg=0x5adde4cfd6b0) at /oai-ran/common/utils/threadPool/thread-pool.c:63
+#7  0x00007931a811aac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#8  0x00007931a81ac850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 9 (Thread 0x7931a3a00640 (LWP 18) "Tpool7_-1"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5adde3b522b0 <nrUE_params+144>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x5adde3b522b0 <nrUE_params+144>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5adde3b522b0 <nrUE_params+144>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007931a8119a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5adde3b52260 <nrUE_params+64>, cond=0x5adde3b52288 <nrUE_params+104>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x5adde3b52288 <nrUE_params+104>, mutex=mutex@entry=0x5adde3b52260 <nrUE_params+64>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005adde359dcdb in pullNotifiedFifoRemember (thr=<optimized out>, nf=<optimized out>) at /oai-ran/common/utils/threadPool/thread-pool.c:37
+#6  one_thread (arg=0x5adde4cfd440) at /oai-ran/common/utils/threadPool/thread-pool.c:63
+#7  0x00007931a811aac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#8  0x00007931a81ac850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 8 (Thread 0x7931a4400640 (LWP 17) "Tpool6_-1"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5adde3b522b0 <nrUE_params+144>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x5adde3b522b0 <nrUE_params+144>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5adde3b522b0 <nrUE_params+144>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007931a8119a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5adde3b52260 <nrUE_params+64>, cond=0x5adde3b52288 <nrUE_params+104>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x5adde3b52288 <nrUE_params+104>, mutex=mutex@entry=0x5adde3b52260 <nrUE_params+64>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005adde359dcdb in pullNotifiedFifoRemember (thr=<optimized out>, nf=<optimized out>) at /oai-ran/common/utils/threadPool/thread-pool.c:37
+#6  one_thread (arg=0x5adde4cfd1d0) at /oai-ran/common/utils/threadPool/thread-pool.c:63
+#7  0x00007931a811aac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#8  0x00007931a81ac850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 7 (Thread 0x7931a4e00640 (LWP 16) "Tpool5_-1"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5adde3b522b0 <nrUE_params+144>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x5adde3b522b0 <nrUE_params+144>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5adde3b522b0 <nrUE_params+144>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007931a8119a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5adde3b52260 <nrUE_params+64>, cond=0x5adde3b52288 <nrUE_params+104>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x5adde3b52288 <nrUE_params+104>, mutex=mutex@entry=0x5adde3b52260 <nrUE_params+64>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005adde359dcdb in pullNotifiedFifoRemember (thr=<optimized out>, nf=<optimized out>) at /oai-ran/common/utils/threadPool/thread-pool.c:37
+#6  one_thread (arg=0x5adde4cfcf60) at /oai-ran/common/utils/threadPool/thread-pool.c:63
+#7  0x00007931a811aac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#8  0x00007931a81ac850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 6 (Thread 0x7931a5800640 (LWP 15) "Tpool4_-1"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5adde3b522b0 <nrUE_params+144>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x5adde3b522b0 <nrUE_params+144>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5adde3b522b0 <nrUE_params+144>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007931a8119a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5adde3b52260 <nrUE_params+64>, cond=0x5adde3b52288 <nrUE_params+104>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x5adde3b52288 <nrUE_params+104>, mutex=mutex@entry=0x5adde3b52260 <nrUE_params+64>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005adde359dcdb in pullNotifiedFifoRemember (thr=<optimized out>, nf=<optimized out>) at /oai-ran/common/utils/threadPool/thread-pool.c:37
+#6  one_thread (arg=0x5adde4cfccf0) at /oai-ran/common/utils/threadPool/thread-pool.c:63
+#7  0x00007931a811aac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#8  0x00007931a81ac850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 5 (Thread 0x7931a6200640 (LWP 14) "Tpool3_-1"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5adde3b522b0 <nrUE_params+144>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x5adde3b522b0 <nrUE_params+144>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5adde3b522b0 <nrUE_params+144>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007931a8119a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5adde3b52260 <nrUE_params+64>, cond=0x5adde3b52288 <nrUE_params+104>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x5adde3b52288 <nrUE_params+104>, mutex=mutex@entry=0x5adde3b52260 <nrUE_params+64>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005adde359dcdb in pullNotifiedFifoRemember (thr=<optimized out>, nf=<optimized out>) at /oai-ran/common/utils/threadPool/thread-pool.c:37
+#6  one_thread (arg=0x5adde4cfca80) at /oai-ran/common/utils/threadPool/thread-pool.c:63
+#7  0x00007931a811aac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#8  0x00007931a81ac850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 4 (Thread 0x7931a6c00640 (LWP 13) "Tpool2_-1"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5adde3b522b0 <nrUE_params+144>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x5adde3b522b0 <nrUE_params+144>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5adde3b522b0 <nrUE_params+144>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007931a8119a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5adde3b52260 <nrUE_params+64>, cond=0x5adde3b52288 <nrUE_params+104>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x5adde3b52288 <nrUE_params+104>, mutex=mutex@entry=0x5adde3b52260 <nrUE_params+64>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005adde359dcdb in pullNotifiedFifoRemember (thr=<optimized out>, nf=<optimized out>) at /oai-ran/common/utils/threadPool/thread-pool.c:37
+#6  one_thread (arg=0x5adde4cfc810) at /oai-ran/common/utils/threadPool/thread-pool.c:63
+#7  0x00007931a811aac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#8  0x00007931a81ac850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 3 (Thread 0x7931a7600640 (LWP 12) "Tpool1_-1"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5adde3b522b0 <nrUE_params+144>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x5adde3b522b0 <nrUE_params+144>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5adde3b522b0 <nrUE_params+144>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007931a8119a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5adde3b52260 <nrUE_params+64>, cond=0x5adde3b52288 <nrUE_params+104>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x5adde3b52288 <nrUE_params+104>, mutex=mutex@entry=0x5adde3b52260 <nrUE_params+64>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005adde359dcdb in pullNotifiedFifoRemember (thr=<optimized out>, nf=<optimized out>) at /oai-ran/common/utils/threadPool/thread-pool.c:37
+#6  one_thread (arg=0x5adde4cfc5a0) at /oai-ran/common/utils/threadPool/thread-pool.c:63
+#7  0x00007931a811aac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#8  0x00007931a81ac850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 2 (Thread 0x7931a8000640 (LWP 11) "Tpool0_-1"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x5adde3b522b0 <nrUE_params+144>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x5adde3b522b0 <nrUE_params+144>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5adde3b522b0 <nrUE_params+144>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007931a8119a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x5adde3b52260 <nrUE_params+64>, cond=0x5adde3b52288 <nrUE_params+104>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x5adde3b52288 <nrUE_params+104>, mutex=mutex@entry=0x5adde3b52260 <nrUE_params+64>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00005adde359dcdb in pullNotifiedFifoRemember (thr=<optimized out>, nf=<optimized out>) at /oai-ran/common/utils/threadPool/thread-pool.c:37
+#6  one_thread (arg=0x5adde4cfc330) at /oai-ran/common/utils/threadPool/thread-pool.c:63
+#7  0x00007931a811aac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#8  0x00007931a81ac850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 1 (Thread 0x7931a8083740 (LWP 7) "nr-uesoftmodem"):
+#0  0x00007931a816b7f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7ffe2088b620, rem=rem@entry=0x7ffe2088b620) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+#1  0x00007931a8170677 in __GI___nanosleep (req=req@entry=0x7ffe2088b620, rem=rem@entry=0x7ffe2088b620) at ../sysdeps/unix/sysv/linux/nanosleep.c:25
+#2  0x00007931a81705ae in __sleep (seconds=0, seconds@entry=2) at ../sysdeps/posix/sleep.c:55
+#3  0x00005adde3272e0e in main (argc=<optimized out>, argv=<optimized out>) at /oai-ran/executables/nr-uesoftmodem.c:547
+Detaching from program: /opt/oai-nr-ue/bin/nr-uesoftmodem, process 7
+[Inferior 1 (process 7) detached]
+CMDLINE: "/opt/oai-nr-ue/bin/nr-uesoftmodem" "-O" "/opt/oai-nr-ue/etc/nr-ue.yaml" 
+[CONFIG] function config_yaml_init returned 0
+UE threads created by 7
+TYPE <CTRL-C> TO TERMINATE
+[HW]   releasing USRP
+[0m[INFO  tini (1)] Spawned child process '/opt/oai-nr-ue/bin/entrypoint.sh' with pid '7'
+[INFO  tini (1)] Main child exited with signal (with signal 'Segmentation fault')

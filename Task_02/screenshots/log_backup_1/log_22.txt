@@ -1,0 +1,800 @@
+==================================
+/proc/sys/kernel/core_pattern=|/usr/share/apport/apport -p%p -s%s -c%c -d%d -P%P -u%u -g%g -- %E
+No configuration file /opt/oai-gnb/etc/gnb.conf found: attempting to find YAML config
+==================================
+== Configuration file:
+RC.nb_nr_inst: 1 
+rfsimulator: "server"
+use_sa_tdd_mono: "yes"
+gnb_name: "gnb-rfsim"
+tac: 1
+mcc: "208"
+mnc: "99"
+mnc_length: 2
+nssai_sst: 1
+nssai_sd0: 1
+nssai_sd1: 112233
+amf_ip_address: "192.168.71.132"
+gnb_nga_if_name: "eth0"
+gnb_nga_ip_address: "192.168.71.136"
+gnb_ngu_if_name: "eth0"
+gnb_ngu_ip_address: "192.168.71.136"
+use_additional_options: "--sa -E --rfsim"
+
+Active_gNBs:
+  - gnb-rfsim
+Asn1_verbosity: none
+gNBs:
+  - gNB_ID: 0xe00
+    gNB_name: gnb-rfsim
+    tracking_area_code: 1
+    plmn_list:
+      - mcc: 208
+        mnc: 99
+        mnc_length: 2
+        snssaiList:
+          - sst: 1
+            sd: 0xffffff
+    nr_cellid: 12345678
+    servingCellConfigCommon:
+      - physCellId: 0
+        absoluteFrequencySSB: 621312
+        dl_absoluteFrequencyPointA: 620040
+        dl_subcarrierSpacing: 1
+        dl_carrierBandwidth: 106
+        initialDLBWPlocationAndBandwidth: 28875
+        initialDLBWPsubcarrierSpacing: 1
+        pMax: 20
+        ul_frequencyBand: 78
+        ul_subcarrierSpacing: 1
+        ul_carrierBandwidth: 106
+        initialULBWPlocationAndBandwidth: 28875
+        initialULBWPsubcarrierSpacing: 1
+        
+        # Configuration TDD
+        tdd-UL-DL-ConfigurationCommon:
+          referenceSubcarrierSpacing: 1
+          dl_UL_TransmissionPeriodicity: 6 # Correspond à 5 ms
+          nrofDownlinkSlots: 7
+          nrofDownlinkSymbols: 6
+          nrofUplinkSlots: 2
+          nrofUplinkSymbols: 4
+          nrofMixedSlots: 1
+
+    SCTP:
+      SCTP_INSTREAMS: 2
+      SCTP_OUTSTREAMS: 2
+    amf_ip_address:
+      - ipv4: 192.168.71.132
+    NETWORK_INTERFACES:
+      GNB_IPV4_ADDRESS_FOR_NG_AMF: 192.168.71.140
+      GNB_IPV4_ADDRESS_FOR_NGU: 192.168.71.140
+      GNB_PORT_FOR_S1U: 2152
+
+MACRLCs:
+  - num_cc: 1
+    tr_s_preference: local_L1
+    tr_n_preference: local_RRC
+    pusch_TargetSNRx10: 200
+    pucch_TargetSNRx10: 200
+
+L1s:
+  - num_cc: 1
+    tr_n_preference: local_mac
+    prach_dtx_threshold: 200
+
+RUs:
+  - local_rf: yes
+    nb_tx: 1
+    nb_rx: 1
+    att_tx: 0
+    att_rx: 0
+    bands: [78]
+    max_pdschReferenceSignalPower: -27
+    max_rxgain: 75
+==================================
+== Load USRP binaries
+==================================
+== Starting gNB soft modem
+/opt/oai-gnb/bin/nr-softmodem -O /opt/oai-gnb/etc/gnb.yaml
+[UTIL]   running in SA mode (no --phy-test, --do-ra, --nsa option present)
+[0m[OPT]   OPT disabled
+[0m[HW]   Version: Branch: HEAD Abrev. Hash: 03946cd47b Date: Wed Nov 27 08:16:32 2024 +0000
+[0m[GNB_APP]   Initialized RAN Context: RC.nb_nr_inst = 1, RC.nb_nr_macrlc_inst = 1, RC.nb_nr_L1_inst = 1, RC.nb_RU = 1, RC.nb_nr_CC[0] = 1
+[0m[NR_PHY]   Initializing gNB RAN context: RC.nb_nr_L1_inst = 1 
+[0m[NR_PHY]   Registered with MAC interface module (0x62d2b9379e30)
+[0m[NR_PHY]   Initializing NR L1: RC.nb_nr_L1_inst = 1
+[0m[NR_PHY]   L1_RX_THREAD_CORE -1 (15)
+[0m[NR_PHY]   TX_AMP = 519 (-36 dBFS)
+[0m[PHY]   No prs_config configuration found..!!
+[0m[GNB_APP]   pdsch_AntennaPorts N1 1 N2 1 XP 1 pusch_AntennaPorts 1
+[0m[GNB_APP]   minTXRXTIME 2
+[0m[GNB_APP]   SIB1 TDA 1
+[0m[GNB_APP]   CSI-RS 0, SRS 0, 256 QAM may be on, delta_MCS off, maxMIMO_Layers -1, HARQ feedback enabled, num DLHARQ:16, num ULHARQ:16
+[0m[GNB_APP]   sr_ProhibitTimer 0, sr_TransMax 64, sr_ProhibitTimer_v1700 0, t300 400, t301 400, t310 2000, n310 10, t311 3000, n311 1, t319 400
+[0m[RRC]   Read in ServingCellConfigCommon (PhysCellId 0, ABSFREQSSB 621312, DLBand 78, ABSFREQPOINTA 620040, DLBW 106,RACH_TargetReceivedPower -118
+[0m[RRC]   absoluteFrequencySSB 621312 corresponds to 3319680000 Hz
+[0m[UTIL]   threadCreate() for MAC_STATS: creating thread with affinity ffffffff, priority 2
+[0m[NR_MAC]   PUSCH Target 200, PUCCH Target 200, PUCCH Failure 10, PUSCH Failure 10
+[0m[NR_PHY]   Copying 0 blacklisted PRB to L1 context
+[0m[NR_MAC]   Set TX antenna number to 1, Set RX antenna number to 1 (num ssb 8: ff000000,0)
+[0mGNU gdb (Ubuntu 12.1-0ubuntu1~22.04.2) 12.1
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+Attaching to process 7
+[New LWP 11]
+[New LWP 12]
+[New LWP 13]
+[New LWP 14]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007ff0f807142f in __GI___wait4 (pid=15, stat_loc=stat_loc@entry=0x7ffd7752e8e8, options=options@entry=0, usage=usage@entry=0x0) at ../sysdeps/unix/sysv/linux/wait4.c:30
+
+Thread 5 (Thread 0x7ff0f5c00640 (LWP 14) "pdcp_timer"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x62d2b78874c8 <timer_thread_cond+40>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x62d2b78874c8 <timer_thread_cond+40>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x62d2b78874c8 <timer_thread_cond+40>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007ff0f801aa41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x62d2b78874e0 <timer_thread_mutex>, cond=0x62d2b78874a0 <timer_thread_cond>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x62d2b78874a0 <timer_thread_cond>, mutex=mutex@entry=0x62d2b78874e0 <timer_thread_mutex>) at ./nptl/pthread_cond_wait.c:627
+#5  0x000062d2b63c48a3 in nr_pdcp_timer_thread (_nr_pdcp_ue_manager=0x62d2b935dd20) at /oai-ran/openair2/LAYER2/nr_pdcp/nr_pdcp_timer_thread.c:48
+#6  0x00007ff0f801bac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#7  0x00007ff0f80ad850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 4 (Thread 0x7ff0f6600640 (LWP 13) "PDCP data ind"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x62d2b77c3ed8 <pq+720088>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x62d2b77c3ed8 <pq+720088>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x62d2b77c3ed8 <pq+720088>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007ff0f801aa41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x62d2b77c3e88 <pq+720008>, cond=0x62d2b77c3eb0 <pq+720048>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x62d2b77c3eb0 <pq+720048>, mutex=mutex@entry=0x62d2b77c3e88 <pq+720008>) at ./nptl/pthread_cond_wait.c:627
+#5  0x000062d2b63ba64b in pdcp_data_ind_thread (_=<optimized out>) at /oai-ran/openair2/LAYER2/nr_pdcp/nr_pdcp_oai_api.c:326
+#6  0x00007ff0f801bac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#7  0x00007ff0f80ad850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 3 (Thread 0x7ff0f7000640 (LWP 12) "RLC queue"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x62d2b7887438 <q+800088>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x62d2b7887438 <q+800088>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x62d2b7887438 <q+800088>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007ff0f801aa41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x62d2b78873e8 <q+800008>, cond=0x62d2b7887410 <q+800048>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x62d2b7887410 <q+800048>, mutex=mutex@entry=0x62d2b78873e8 <q+800008>) at ./nptl/pthread_cond_wait.c:627
+#5  0x000062d2b63b87eb in rlc_data_req_thread (_=<optimized out>) at /oai-ran/openair2/LAYER2/nr_pdcp/nr_pdcp_oai_api.c:158
+#6  0x00007ff0f801bac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#7  0x00007ff0f80ad850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 2 (Thread 0x7ff0f7a00640 (LWP 11) "MAC_STATS"):
+#0  0x00007ff0f806c7f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7ff0f79f6c30, rem=rem@entry=0x7ff0f79f6c30) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+#1  0x00007ff0f8071677 in __GI___nanosleep (req=req@entry=0x7ff0f79f6c30, rem=rem@entry=0x7ff0f79f6c30) at ../sysdeps/unix/sysv/linux/nanosleep.c:25
+#2  0x00007ff0f80715ae in __sleep (seconds=0, seconds@entry=1) at ../sysdeps/posix/sleep.c:55
+#3  0x000062d2b64beb43 in nrmac_stats_thread (arg=0x62d2b939f420) at /oai-ran/openair2/LAYER2/NR_MAC_gNB/main.c:103
+#4  0x00007ff0f801bac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#5  0x00007ff0f80ad850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 1 (Thread 0x7ff0f7f86000 (LWP 7) "nr-softmodem"):
+#0  0x00007ff0f807142f in __GI___wait4 (pid=15, stat_loc=stat_loc@entry=0x7ffd7752e8e8, options=options@entry=0, usage=usage@entry=0x0) at ../sysdeps/unix/sysv/linux/wait4.c:30
+#1  0x00007ff0f80713ab in __GI___waitpid (pid=<optimized out>, stat_loc=stat_loc@entry=0x7ffd7752e8e8, options=options@entry=0) at ./posix/waitpid.c:38
+#2  0x00007ff0f7fd7bdb in do_system (line=line@entry=0x7ffd7752ecc0 "gdb -ex='set confirm off' -ex 'thread apply all bt' -ex q -p 7 < /dev/null") at ../sysdeps/posix/system.c:171
+#3  0x00007ff0f7fd7d7e in __libc_system (line=line@entry=0x7ffd7752ecc0 "gdb -ex='set confirm off' -ex 'thread apply all bt' -ex q -p 7 < /dev/null") at ../sysdeps/posix/system.c:207
+#4  0x000062d2b61cd7c5 in set_tdd_config_nr (cfg=cfg@entry=0x62d2b93a0c78, mu=1, nrofDownlinkSlots=7, nrofDownlinkSymbols=6, nrofUplinkSlots=2, nrofUplinkSymbols=<optimized out>) at /oai-ran/openair1/SCHED_NR/phy_frame_config_nr.c:74
+#5  0x000062d2b640f3e4 in config_common (scc=0x62d2b9373850, config=0x7ffd7752f8b0, nrmac=0x62d2b939f420) at /oai-ran/openair2/LAYER2/NR_MAC_gNB/config.c:592
+#6  nr_mac_config_scc (nrmac=<optimized out>, scc=scc@entry=0x62d2b9373850, config=config@entry=0x7ffd7752f8b0) at /oai-ran/openair2/LAYER2/NR_MAC_gNB/config.c:686
+#7  0x000062d2b6491fda in RCconfig_nr_macrlc (cfg=cfg@entry=0x62d2b9331130) at /oai-ran/openair2/GNB_APP/gnb_config.c:1499
+#8  0x000062d2b61866c4 in create_gNB_tasks (cfg=0x62d2b9331130, node_type=ngran_gNB) at /oai-ran/executables/nr-softmodem.c:246
+#9  main (argc=<optimized out>, argv=0x7ffd7753ab18) at /oai-ran/executables/nr-softmodem.c:539
+Detaching from program: /opt/oai-gnb/bin/nr-softmodem, process 7
+[Inferior 1 (process 7) detached]
+CMDLINE: "/opt/oai-gnb/bin/nr-softmodem" "-O" "/opt/oai-gnb/etc/gnb.yaml" 
+[CONFIG] function config_yaml_init returned 0
+/oai-ran/openair1/SCHED_NR/phy_frame_config_nr.c:74 set_tdd_config_nr() Exiting OAI softmodem: _Assert_Exit_
+[INFO  tini (1)] Spawned child process '/opt/oai-gnb/bin/entrypoint.sh' with pid '7'
+[INFO  tini (1)] Main child exited normally (with status '255')
+==================================
+/proc/sys/kernel/core_pattern=|/usr/share/apport/apport -p%p -s%s -c%c -d%d -P%P -u%u -g%g -- %E
+No configuration file /opt/oai-gnb/etc/gnb.conf found: attempting to find YAML config
+==================================
+== Configuration file:
+RC.nb_nr_inst: 1 
+rfsimulator: "server"
+use_sa_tdd_mono: "yes"
+gnb_name: "gnb-rfsim"
+tac: 1
+mcc: "208"
+mnc: "99"
+mnc_length: 2
+nssai_sst: 1
+nssai_sd0: 1
+nssai_sd1: 112233
+amf_ip_address: "192.168.71.132"
+gnb_nga_if_name: "eth0"
+gnb_nga_ip_address: "192.168.71.136"
+gnb_ngu_if_name: "eth0"
+gnb_ngu_ip_address: "192.168.71.136"
+use_additional_options: "--sa -E --rfsim"
+
+Active_gNBs:
+  - gnb-rfsim
+Asn1_verbosity: none
+gNBs:
+  - gNB_ID: 0xe00
+    gNB_name: gnb-rfsim
+    tracking_area_code: 1
+    plmn_list:
+      - mcc: 208
+        mnc: 99
+        mnc_length: 2
+        snssaiList:
+          - sst: 1
+            sd: 0xffffff
+    nr_cellid: 12345678
+    servingCellConfigCommon:
+      - physCellId: 0
+        absoluteFrequencySSB: 621312
+        dl_absoluteFrequencyPointA: 620040
+        dl_subcarrierSpacing: 1
+        dl_carrierBandwidth: 106
+        initialDLBWPlocationAndBandwidth: 28875
+        initialDLBWPsubcarrierSpacing: 1
+        pMax: 20
+        ul_frequencyBand: 78
+        ul_subcarrierSpacing: 1
+        ul_carrierBandwidth: 106
+        initialULBWPlocationAndBandwidth: 28875
+        initialULBWPsubcarrierSpacing: 1
+        
+        # Configuration TDD
+        tdd-UL-DL-ConfigurationCommon:
+          referenceSubcarrierSpacing: 1
+          dl_UL_TransmissionPeriodicity: 6 # Correspond à 5 ms
+          nrofDownlinkSlots: 7
+          nrofDownlinkSymbols: 6
+          nrofUplinkSlots: 2
+          nrofUplinkSymbols: 4
+          nrofMixedSlots: 1
+
+    SCTP:
+      SCTP_INSTREAMS: 2
+      SCTP_OUTSTREAMS: 2
+    amf_ip_address:
+      - ipv4: 192.168.71.132
+    NETWORK_INTERFACES:
+      GNB_IPV4_ADDRESS_FOR_NG_AMF: 192.168.71.140
+      GNB_IPV4_ADDRESS_FOR_NGU: 192.168.71.140
+      GNB_PORT_FOR_S1U: 2152
+
+MACRLCs:
+  - num_cc: 1
+    tr_s_preference: local_L1
+    tr_n_preference: local_RRC
+    pusch_TargetSNRx10: 200
+    pucch_TargetSNRx10: 200
+
+L1s:
+  - num_cc: 1
+    tr_n_preference: local_mac
+    prach_dtx_threshold: 200
+
+RUs:
+  - local_rf: yes
+    nb_tx: 1
+    nb_rx: 1
+    att_tx: 0
+    att_rx: 0
+    bands: [78]
+    max_pdschReferenceSignalPower: -27
+    max_rxgain: 75
+==================================
+== Load USRP binaries
+==================================
+== Starting gNB soft modem
+/opt/oai-gnb/bin/nr-softmodem -O /opt/oai-gnb/etc/gnb.yaml
+[UTIL]   running in SA mode (no --phy-test, --do-ra, --nsa option present)
+[0m[OPT]   OPT disabled
+[0m[HW]   Version: Branch: HEAD Abrev. Hash: 03946cd47b Date: Wed Nov 27 08:16:32 2024 +0000
+[0m[GNB_APP]   Initialized RAN Context: RC.nb_nr_inst = 1, RC.nb_nr_macrlc_inst = 1, RC.nb_nr_L1_inst = 1, RC.nb_RU = 1, RC.nb_nr_CC[0] = 1
+[0m[NR_PHY]   Initializing gNB RAN context: RC.nb_nr_L1_inst = 1 
+[0m[NR_PHY]   Registered with MAC interface module (0x596b2b6fae30)
+[0m[NR_PHY]   Initializing NR L1: RC.nb_nr_L1_inst = 1
+[0m[NR_PHY]   L1_RX_THREAD_CORE -1 (15)
+[0m[NR_PHY]   TX_AMP = 519 (-36 dBFS)
+[0m[PHY]   No prs_config configuration found..!!
+[0m[GNB_APP]   pdsch_AntennaPorts N1 1 N2 1 XP 1 pusch_AntennaPorts 1
+[0m[GNB_APP]   minTXRXTIME 2
+[0m[GNB_APP]   SIB1 TDA 1
+[0m[GNB_APP]   CSI-RS 0, SRS 0, 256 QAM may be on, delta_MCS off, maxMIMO_Layers -1, HARQ feedback enabled, num DLHARQ:16, num ULHARQ:16
+[0m[GNB_APP]   sr_ProhibitTimer 0, sr_TransMax 64, sr_ProhibitTimer_v1700 0, t300 400, t301 400, t310 2000, n310 10, t311 3000, n311 1, t319 400
+[0m[RRC]   Read in ServingCellConfigCommon (PhysCellId 0, ABSFREQSSB 621312, DLBand 78, ABSFREQPOINTA 620040, DLBW 106,RACH_TargetReceivedPower -118
+[0m[RRC]   absoluteFrequencySSB 621312 corresponds to 3319680000 Hz
+[0m[UTIL]   threadCreate() for MAC_STATS: creating thread with affinity ffffffff, priority 2
+[0m[NR_MAC]   PUSCH Target 200, PUCCH Target 200, PUCCH Failure 10, PUSCH Failure 10
+[0m[NR_PHY]   Copying 0 blacklisted PRB to L1 context
+[0m[NR_MAC]   Set TX antenna number to 1, Set RX antenna number to 1 (num ssb 8: ff000000,0)
+[0mGNU gdb (Ubuntu 12.1-0ubuntu1~22.04.2) 12.1
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+Attaching to process 7
+[New LWP 11]
+[New LWP 12]
+[New LWP 13]
+[New LWP 14]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007ea282f2342f in __GI___wait4 (pid=15, stat_loc=stat_loc@entry=0x7ffcf71ca008, options=options@entry=0, usage=usage@entry=0x0) at ../sysdeps/unix/sysv/linux/wait4.c:30
+
+Thread 5 (Thread 0x7ea280a00640 (LWP 14) "pdcp_timer"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x596b293364c8 <timer_thread_cond+40>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x596b293364c8 <timer_thread_cond+40>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x596b293364c8 <timer_thread_cond+40>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007ea282ecca41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x596b293364e0 <timer_thread_mutex>, cond=0x596b293364a0 <timer_thread_cond>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x596b293364a0 <timer_thread_cond>, mutex=mutex@entry=0x596b293364e0 <timer_thread_mutex>) at ./nptl/pthread_cond_wait.c:627
+#5  0x0000596b27e738a3 in nr_pdcp_timer_thread (_nr_pdcp_ue_manager=0x596b2b6ded20) at /oai-ran/openair2/LAYER2/nr_pdcp/nr_pdcp_timer_thread.c:48
+#6  0x00007ea282ecdac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#7  0x00007ea282f5f850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 4 (Thread 0x7ea281400640 (LWP 13) "PDCP data ind"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x596b29272ed8 <pq+720088>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x596b29272ed8 <pq+720088>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x596b29272ed8 <pq+720088>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007ea282ecca41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x596b29272e88 <pq+720008>, cond=0x596b29272eb0 <pq+720048>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x596b29272eb0 <pq+720048>, mutex=mutex@entry=0x596b29272e88 <pq+720008>) at ./nptl/pthread_cond_wait.c:627
+#5  0x0000596b27e6964b in pdcp_data_ind_thread (_=<optimized out>) at /oai-ran/openair2/LAYER2/nr_pdcp/nr_pdcp_oai_api.c:326
+#6  0x00007ea282ecdac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#7  0x00007ea282f5f850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 3 (Thread 0x7ea281e00640 (LWP 12) "RLC queue"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x596b29336438 <q+800088>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x596b29336438 <q+800088>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x596b29336438 <q+800088>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007ea282ecca41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x596b293363e8 <q+800008>, cond=0x596b29336410 <q+800048>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x596b29336410 <q+800048>, mutex=mutex@entry=0x596b293363e8 <q+800008>) at ./nptl/pthread_cond_wait.c:627
+#5  0x0000596b27e677eb in rlc_data_req_thread (_=<optimized out>) at /oai-ran/openair2/LAYER2/nr_pdcp/nr_pdcp_oai_api.c:158
+#6  0x00007ea282ecdac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#7  0x00007ea282f5f850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 2 (Thread 0x7ea282800640 (LWP 11) "MAC_STATS"):
+#0  0x00007ea282f1e7f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7ea2827f6c30, rem=rem@entry=0x7ea2827f6c30) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+#1  0x00007ea282f23677 in __GI___nanosleep (req=req@entry=0x7ea2827f6c30, rem=rem@entry=0x7ea2827f6c30) at ../sysdeps/unix/sysv/linux/nanosleep.c:25
+#2  0x00007ea282f235ae in __sleep (seconds=0, seconds@entry=1) at ../sysdeps/posix/sleep.c:55
+#3  0x0000596b27f6db43 in nrmac_stats_thread (arg=0x596b2b720420) at /oai-ran/openair2/LAYER2/NR_MAC_gNB/main.c:103
+#4  0x00007ea282ecdac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#5  0x00007ea282f5f850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 1 (Thread 0x7ea282e38000 (LWP 7) "nr-softmodem"):
+#0  0x00007ea282f2342f in __GI___wait4 (pid=15, stat_loc=stat_loc@entry=0x7ffcf71ca008, options=options@entry=0, usage=usage@entry=0x0) at ../sysdeps/unix/sysv/linux/wait4.c:30
+#1  0x00007ea282f233ab in __GI___waitpid (pid=<optimized out>, stat_loc=stat_loc@entry=0x7ffcf71ca008, options=options@entry=0) at ./posix/waitpid.c:38
+#2  0x00007ea282e89bdb in do_system (line=line@entry=0x7ffcf71ca3e0 "gdb -ex='set confirm off' -ex 'thread apply all bt' -ex q -p 7 < /dev/null") at ../sysdeps/posix/system.c:171
+#3  0x00007ea282e89d7e in __libc_system (line=line@entry=0x7ffcf71ca3e0 "gdb -ex='set confirm off' -ex 'thread apply all bt' -ex q -p 7 < /dev/null") at ../sysdeps/posix/system.c:207
+#4  0x0000596b27c7c7c5 in set_tdd_config_nr (cfg=cfg@entry=0x596b2b721c78, mu=1, nrofDownlinkSlots=7, nrofDownlinkSymbols=6, nrofUplinkSlots=2, nrofUplinkSymbols=<optimized out>) at /oai-ran/openair1/SCHED_NR/phy_frame_config_nr.c:74
+#5  0x0000596b27ebe3e4 in config_common (scc=0x596b2b6f4850, config=0x7ffcf71cafd0, nrmac=0x596b2b720420) at /oai-ran/openair2/LAYER2/NR_MAC_gNB/config.c:592
+#6  nr_mac_config_scc (nrmac=<optimized out>, scc=scc@entry=0x596b2b6f4850, config=config@entry=0x7ffcf71cafd0) at /oai-ran/openair2/LAYER2/NR_MAC_gNB/config.c:686
+#7  0x0000596b27f40fda in RCconfig_nr_macrlc (cfg=cfg@entry=0x596b2b6b2130) at /oai-ran/openair2/GNB_APP/gnb_config.c:1499
+#8  0x0000596b27c356c4 in create_gNB_tasks (cfg=0x596b2b6b2130, node_type=ngran_gNB) at /oai-ran/executables/nr-softmodem.c:246
+#9  main (argc=<optimized out>, argv=0x7ffcf71d6228) at /oai-ran/executables/nr-softmodem.c:539
+Detaching from program: /opt/oai-gnb/bin/nr-softmodem, process 7
+[Inferior 1 (process 7) detached]
+CMDLINE: "/opt/oai-gnb/bin/nr-softmodem" "-O" "/opt/oai-gnb/etc/gnb.yaml" 
+[CONFIG] function config_yaml_init returned 0
+/oai-ran/openair1/SCHED_NR/phy_frame_config_nr.c:74 set_tdd_config_nr() Exiting OAI softmodem: _Assert_Exit_
+[INFO  tini (1)] Spawned child process '/opt/oai-gnb/bin/entrypoint.sh' with pid '7'
+[INFO  tini (1)] Main child exited normally (with status '255')
+==================================
+/proc/sys/kernel/core_pattern=|/usr/share/apport/apport -p%p -s%s -c%c -d%d -P%P -u%u -g%g -- %E
+No configuration file /opt/oai-gnb/etc/gnb.conf found: attempting to find YAML config
+==================================
+== Configuration file:
+RC.nb_nr_inst: 1 
+rfsimulator: "server"
+use_sa_tdd_mono: "yes"
+gnb_name: "gnb-rfsim"
+tac: 1
+mcc: "208"
+mnc: "99"
+mnc_length: 2
+nssai_sst: 1
+nssai_sd0: 1
+nssai_sd1: 112233
+amf_ip_address: "192.168.71.132"
+gnb_nga_if_name: "eth0"
+gnb_nga_ip_address: "192.168.71.136"
+gnb_ngu_if_name: "eth0"
+gnb_ngu_ip_address: "192.168.71.136"
+use_additional_options: "--sa -E --rfsim"
+
+Active_gNBs:
+  - gnb-rfsim
+Asn1_verbosity: none
+gNBs:
+  - gNB_ID: 0xe00
+    gNB_name: gnb-rfsim
+    tracking_area_code: 1
+    plmn_list:
+      - mcc: 208
+        mnc: 99
+        mnc_length: 2
+        snssaiList:
+          - sst: 1
+            sd: 0xffffff
+    nr_cellid: 12345678
+    servingCellConfigCommon:
+      - physCellId: 0
+        absoluteFrequencySSB: 621312
+        dl_absoluteFrequencyPointA: 620040
+        dl_subcarrierSpacing: 1
+        dl_carrierBandwidth: 106
+        initialDLBWPlocationAndBandwidth: 28875
+        initialDLBWPsubcarrierSpacing: 1
+        pMax: 20
+        ul_frequencyBand: 78
+        ul_subcarrierSpacing: 1
+        ul_carrierBandwidth: 106
+        initialULBWPlocationAndBandwidth: 28875
+        initialULBWPsubcarrierSpacing: 1
+        
+        # Configuration TDD
+        tdd-UL-DL-ConfigurationCommon:
+          referenceSubcarrierSpacing: 1
+          dl_UL_TransmissionPeriodicity: 6 # Correspond à 5 ms
+          nrofDownlinkSlots: 7
+          nrofDownlinkSymbols: 6
+          nrofUplinkSlots: 2
+          nrofUplinkSymbols: 4
+          nrofMixedSlots: 1
+
+    SCTP:
+      SCTP_INSTREAMS: 2
+      SCTP_OUTSTREAMS: 2
+    amf_ip_address:
+      - ipv4: 192.168.71.132
+    NETWORK_INTERFACES:
+      GNB_IPV4_ADDRESS_FOR_NG_AMF: 192.168.71.140
+      GNB_IPV4_ADDRESS_FOR_NGU: 192.168.71.140
+      GNB_PORT_FOR_S1U: 2152
+
+MACRLCs:
+  - num_cc: 1
+    tr_s_preference: local_L1
+    tr_n_preference: local_RRC
+    pusch_TargetSNRx10: 200
+    pucch_TargetSNRx10: 200
+
+L1s:
+  - num_cc: 1
+    tr_n_preference: local_mac
+    prach_dtx_threshold: 200
+
+RUs:
+  - local_rf: yes
+    nb_tx: 1
+    nb_rx: 1
+    att_tx: 0
+    att_rx: 0
+    bands: [78]
+    max_pdschReferenceSignalPower: -27
+    max_rxgain: 75
+==================================
+== Load USRP binaries
+==================================
+== Starting gNB soft modem
+/opt/oai-gnb/bin/nr-softmodem -O /opt/oai-gnb/etc/gnb.yaml
+[UTIL]   running in SA mode (no --phy-test, --do-ra, --nsa option present)
+[0m[OPT]   OPT disabled
+[0m[HW]   Version: Branch: HEAD Abrev. Hash: 03946cd47b Date: Wed Nov 27 08:16:32 2024 +0000
+[0m[GNB_APP]   Initialized RAN Context: RC.nb_nr_inst = 1, RC.nb_nr_macrlc_inst = 1, RC.nb_nr_L1_inst = 1, RC.nb_RU = 1, RC.nb_nr_CC[0] = 1
+[0m[NR_PHY]   Initializing gNB RAN context: RC.nb_nr_L1_inst = 1 
+[0m[NR_PHY]   Registered with MAC interface module (0x62533b944e30)
+[0m[NR_PHY]   Initializing NR L1: RC.nb_nr_L1_inst = 1
+[0m[NR_PHY]   L1_RX_THREAD_CORE -1 (15)
+[0m[NR_PHY]   TX_AMP = 519 (-36 dBFS)
+[0m[PHY]   No prs_config configuration found..!!
+[0m[GNB_APP]   pdsch_AntennaPorts N1 1 N2 1 XP 1 pusch_AntennaPorts 1
+[0m[GNB_APP]   minTXRXTIME 2
+[0m[GNB_APP]   SIB1 TDA 1
+[0m[GNB_APP]   CSI-RS 0, SRS 0, 256 QAM may be on, delta_MCS off, maxMIMO_Layers -1, HARQ feedback enabled, num DLHARQ:16, num ULHARQ:16
+[0m[GNB_APP]   sr_ProhibitTimer 0, sr_TransMax 64, sr_ProhibitTimer_v1700 0, t300 400, t301 400, t310 2000, n310 10, t311 3000, n311 1, t319 400
+[0m[RRC]   Read in ServingCellConfigCommon (PhysCellId 0, ABSFREQSSB 621312, DLBand 78, ABSFREQPOINTA 620040, DLBW 106,RACH_TargetReceivedPower -118
+[0m[RRC]   absoluteFrequencySSB 621312 corresponds to 3319680000 Hz
+[0m[UTIL]   threadCreate() for MAC_STATS: creating thread with affinity ffffffff, priority 2
+[0m[NR_MAC]   PUSCH Target 200, PUCCH Target 200, PUCCH Failure 10, PUSCH Failure 10
+[0m[NR_PHY]   Copying 0 blacklisted PRB to L1 context
+[0m[NR_MAC]   Set TX antenna number to 1, Set RX antenna number to 1 (num ssb 8: ff000000,0)
+[0mGNU gdb (Ubuntu 12.1-0ubuntu1~22.04.2) 12.1
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+Attaching to process 7
+[New LWP 11]
+[New LWP 12]
+[New LWP 13]
+[New LWP 14]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007a1069b7242f in __GI___wait4 (pid=15, stat_loc=stat_loc@entry=0x7ffcd1ec5948, options=options@entry=0, usage=usage@entry=0x0) at ../sysdeps/unix/sysv/linux/wait4.c:30
+
+Thread 5 (Thread 0x7a1063400640 (LWP 14) "pdcp_timer"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x6253398174c8 <timer_thread_cond+40>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x6253398174c8 <timer_thread_cond+40>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x6253398174c8 <timer_thread_cond+40>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007a1069b1ba41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x6253398174e0 <timer_thread_mutex>, cond=0x6253398174a0 <timer_thread_cond>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x6253398174a0 <timer_thread_cond>, mutex=mutex@entry=0x6253398174e0 <timer_thread_mutex>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00006253383548a3 in nr_pdcp_timer_thread (_nr_pdcp_ue_manager=0x62533b928d20) at /oai-ran/openair2/LAYER2/nr_pdcp/nr_pdcp_timer_thread.c:48
+#6  0x00007a1069b1cac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#7  0x00007a1069bae850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 4 (Thread 0x7a1063e00640 (LWP 13) "PDCP data ind"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x625339753ed8 <pq+720088>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x625339753ed8 <pq+720088>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x625339753ed8 <pq+720088>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007a1069b1ba41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x625339753e88 <pq+720008>, cond=0x625339753eb0 <pq+720048>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x625339753eb0 <pq+720048>, mutex=mutex@entry=0x625339753e88 <pq+720008>) at ./nptl/pthread_cond_wait.c:627
+#5  0x000062533834a64b in pdcp_data_ind_thread (_=<optimized out>) at /oai-ran/openair2/LAYER2/nr_pdcp/nr_pdcp_oai_api.c:326
+#6  0x00007a1069b1cac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#7  0x00007a1069bae850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 3 (Thread 0x7a1068a00640 (LWP 12) "RLC queue"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x625339817438 <q+800088>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x625339817438 <q+800088>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x625339817438 <q+800088>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007a1069b1ba41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x6253398173e8 <q+800008>, cond=0x625339817410 <q+800048>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x625339817410 <q+800048>, mutex=mutex@entry=0x6253398173e8 <q+800008>) at ./nptl/pthread_cond_wait.c:627
+#5  0x00006253383487eb in rlc_data_req_thread (_=<optimized out>) at /oai-ran/openair2/LAYER2/nr_pdcp/nr_pdcp_oai_api.c:158
+#6  0x00007a1069b1cac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#7  0x00007a1069bae850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 2 (Thread 0x7a1069400640 (LWP 11) "MAC_STATS"):
+#0  0x00007a1069b6d7f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7a10693f6c30, rem=rem@entry=0x7a10693f6c30) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+#1  0x00007a1069b72677 in __GI___nanosleep (req=req@entry=0x7a10693f6c30, rem=rem@entry=0x7a10693f6c30) at ../sysdeps/unix/sysv/linux/nanosleep.c:25
+#2  0x00007a1069b725ae in __sleep (seconds=0, seconds@entry=1) at ../sysdeps/posix/sleep.c:55
+#3  0x000062533844eb43 in nrmac_stats_thread (arg=0x62533b96a420) at /oai-ran/openair2/LAYER2/NR_MAC_gNB/main.c:103
+#4  0x00007a1069b1cac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#5  0x00007a1069bae850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 1 (Thread 0x7a1069a87000 (LWP 7) "nr-softmodem"):
+#0  0x00007a1069b7242f in __GI___wait4 (pid=15, stat_loc=stat_loc@entry=0x7ffcd1ec5948, options=options@entry=0, usage=usage@entry=0x0) at ../sysdeps/unix/sysv/linux/wait4.c:30
+#1  0x00007a1069b723ab in __GI___waitpid (pid=<optimized out>, stat_loc=stat_loc@entry=0x7ffcd1ec5948, options=options@entry=0) at ./posix/waitpid.c:38
+#2  0x00007a1069ad8bdb in do_system (line=line@entry=0x7ffcd1ec5d20 "gdb -ex='set confirm off' -ex 'thread apply all bt' -ex q -p 7 < /dev/null") at ../sysdeps/posix/system.c:171
+#3  0x00007a1069ad8d7e in __libc_system (line=line@entry=0x7ffcd1ec5d20 "gdb -ex='set confirm off' -ex 'thread apply all bt' -ex q -p 7 < /dev/null") at ../sysdeps/posix/system.c:207
+#4  0x000062533815d7c5 in set_tdd_config_nr (cfg=cfg@entry=0x62533b96bc78, mu=1, nrofDownlinkSlots=7, nrofDownlinkSymbols=6, nrofUplinkSlots=2, nrofUplinkSymbols=<optimized out>) at /oai-ran/openair1/SCHED_NR/phy_frame_config_nr.c:74
+#5  0x000062533839f3e4 in config_common (scc=0x62533b93e850, config=0x7ffcd1ec6910, nrmac=0x62533b96a420) at /oai-ran/openair2/LAYER2/NR_MAC_gNB/config.c:592
+#6  nr_mac_config_scc (nrmac=<optimized out>, scc=scc@entry=0x62533b93e850, config=config@entry=0x7ffcd1ec6910) at /oai-ran/openair2/LAYER2/NR_MAC_gNB/config.c:686
+#7  0x0000625338421fda in RCconfig_nr_macrlc (cfg=cfg@entry=0x62533b8fc130) at /oai-ran/openair2/GNB_APP/gnb_config.c:1499
+#8  0x00006253381166c4 in create_gNB_tasks (cfg=0x62533b8fc130, node_type=ngran_gNB) at /oai-ran/executables/nr-softmodem.c:246
+#9  main (argc=<optimized out>, argv=0x7ffcd1ed1b68) at /oai-ran/executables/nr-softmodem.c:539
+Detaching from program: /opt/oai-gnb/bin/nr-softmodem, process 7
+[Inferior 1 (process 7) detached]
+CMDLINE: "/opt/oai-gnb/bin/nr-softmodem" "-O" "/opt/oai-gnb/etc/gnb.yaml" 
+[CONFIG] function config_yaml_init returned 0
+/oai-ran/openair1/SCHED_NR/phy_frame_config_nr.c:74 set_tdd_config_nr() Exiting OAI softmodem: _Assert_Exit_
+[INFO  tini (1)] Spawned child process '/opt/oai-gnb/bin/entrypoint.sh' with pid '7'
+[INFO  tini (1)] Main child exited normally (with status '255')
+==================================
+/proc/sys/kernel/core_pattern=|/usr/share/apport/apport -p%p -s%s -c%c -d%d -P%P -u%u -g%g -- %E
+No configuration file /opt/oai-gnb/etc/gnb.conf found: attempting to find YAML config
+==================================
+== Configuration file:
+RC.nb_nr_inst: 1 
+rfsimulator: "server"
+use_sa_tdd_mono: "yes"
+gnb_name: "gnb-rfsim"
+tac: 1
+mcc: "208"
+mnc: "99"
+mnc_length: 2
+nssai_sst: 1
+nssai_sd0: 1
+nssai_sd1: 112233
+amf_ip_address: "192.168.71.132"
+gnb_nga_if_name: "eth0"
+gnb_nga_ip_address: "192.168.71.136"
+gnb_ngu_if_name: "eth0"
+gnb_ngu_ip_address: "192.168.71.136"
+use_additional_options: "--sa -E --rfsim"
+
+Active_gNBs:
+  - gnb-rfsim
+Asn1_verbosity: none
+gNBs:
+  - gNB_ID: 0xe00
+    gNB_name: gnb-rfsim
+    tracking_area_code: 1
+    plmn_list:
+      - mcc: 208
+        mnc: 99
+        mnc_length: 2
+        snssaiList:
+          - sst: 1
+            sd: 0xffffff
+    nr_cellid: 12345678
+    servingCellConfigCommon:
+      - physCellId: 0
+        absoluteFrequencySSB: 621312
+        dl_absoluteFrequencyPointA: 620040
+        dl_subcarrierSpacing: 1
+        dl_carrierBandwidth: 106
+        initialDLBWPlocationAndBandwidth: 28875
+        initialDLBWPsubcarrierSpacing: 1
+        pMax: 20
+        ul_frequencyBand: 78
+        ul_subcarrierSpacing: 1
+        ul_carrierBandwidth: 106
+        initialULBWPlocationAndBandwidth: 28875
+        initialULBWPsubcarrierSpacing: 1
+        
+        # Configuration TDD
+        tdd-UL-DL-ConfigurationCommon:
+          referenceSubcarrierSpacing: 1
+          dl_UL_TransmissionPeriodicity: 6 # Correspond à 5 ms
+          nrofDownlinkSlots: 7
+          nrofDownlinkSymbols: 6
+          nrofUplinkSlots: 2
+          nrofUplinkSymbols: 4
+          nrofMixedSlots: 1
+
+    SCTP:
+      SCTP_INSTREAMS: 2
+      SCTP_OUTSTREAMS: 2
+    amf_ip_address:
+      - ipv4: 192.168.71.132
+    NETWORK_INTERFACES:
+      GNB_IPV4_ADDRESS_FOR_NG_AMF: 192.168.71.140
+      GNB_IPV4_ADDRESS_FOR_NGU: 192.168.71.140
+      GNB_PORT_FOR_S1U: 2152
+
+MACRLCs:
+  - num_cc: 1
+    tr_s_preference: local_L1
+    tr_n_preference: local_RRC
+    pusch_TargetSNRx10: 200
+    pucch_TargetSNRx10: 200
+
+L1s:
+  - num_cc: 1
+    tr_n_preference: local_mac
+    prach_dtx_threshold: 200
+
+RUs:
+  - local_rf: yes
+    nb_tx: 1
+    nb_rx: 1
+    att_tx: 0
+    att_rx: 0
+    bands: [78]
+    max_pdschReferenceSignalPower: -27
+    max_rxgain: 75
+==================================
+== Load USRP binaries
+==================================
+== Starting gNB soft modem
+/opt/oai-gnb/bin/nr-softmodem -O /opt/oai-gnb/etc/gnb.yaml
+[UTIL]   running in SA mode (no --phy-test, --do-ra, --nsa option present)
+[0m[OPT]   OPT disabled
+[0m[HW]   Version: Branch: HEAD Abrev. Hash: 03946cd47b Date: Wed Nov 27 08:16:32 2024 +0000
+[0m[GNB_APP]   Initialized RAN Context: RC.nb_nr_inst = 1, RC.nb_nr_macrlc_inst = 1, RC.nb_nr_L1_inst = 1, RC.nb_RU = 1, RC.nb_nr_CC[0] = 1
+[0m[NR_PHY]   Initializing gNB RAN context: RC.nb_nr_L1_inst = 1 
+[0m[NR_PHY]   Registered with MAC interface module (0x57713f304e30)
+[0m[NR_PHY]   Initializing NR L1: RC.nb_nr_L1_inst = 1
+[0m[NR_PHY]   L1_RX_THREAD_CORE -1 (15)
+[0m[NR_PHY]   TX_AMP = 519 (-36 dBFS)
+[0m[PHY]   No prs_config configuration found..!!
+[0m[GNB_APP]   pdsch_AntennaPorts N1 1 N2 1 XP 1 pusch_AntennaPorts 1
+[0m[GNB_APP]   minTXRXTIME 2
+[0m[GNB_APP]   SIB1 TDA 1
+[0m[GNB_APP]   CSI-RS 0, SRS 0, 256 QAM may be on, delta_MCS off, maxMIMO_Layers -1, HARQ feedback enabled, num DLHARQ:16, num ULHARQ:16
+[0m[GNB_APP]   sr_ProhibitTimer 0, sr_TransMax 64, sr_ProhibitTimer_v1700 0, t300 400, t301 400, t310 2000, n310 10, t311 3000, n311 1, t319 400
+[0m[RRC]   Read in ServingCellConfigCommon (PhysCellId 0, ABSFREQSSB 621312, DLBand 78, ABSFREQPOINTA 620040, DLBW 106,RACH_TargetReceivedPower -118
+[0m[RRC]   absoluteFrequencySSB 621312 corresponds to 3319680000 Hz
+[0m[UTIL]   threadCreate() for MAC_STATS: creating thread with affinity ffffffff, priority 2
+[0m[NR_MAC]   PUSCH Target 200, PUCCH Target 200, PUCCH Failure 10, PUSCH Failure 10
+[0m[NR_PHY]   Copying 0 blacklisted PRB to L1 context
+[0m[NR_MAC]   Set TX antenna number to 1, Set RX antenna number to 1 (num ssb 8: ff000000,0)
+[0mGNU gdb (Ubuntu 12.1-0ubuntu1~22.04.2) 12.1
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+Attaching to process 7
+[New LWP 11]
+[New LWP 12]
+[New LWP 13]
+[New LWP 14]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007422ced2a42f in __GI___wait4 (pid=15, stat_loc=stat_loc@entry=0x7ffd7ad76fe8, options=options@entry=0, usage=usage@entry=0x0) at ../sysdeps/unix/sysv/linux/wait4.c:30
+
+Thread 5 (Thread 0x7422c7e00640 (LWP 14) "pdcp_timer"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x57713d30c4c8 <timer_thread_cond+40>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x57713d30c4c8 <timer_thread_cond+40>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x57713d30c4c8 <timer_thread_cond+40>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007422cecd3a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x57713d30c4e0 <timer_thread_mutex>, cond=0x57713d30c4a0 <timer_thread_cond>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x57713d30c4a0 <timer_thread_cond>, mutex=mutex@entry=0x57713d30c4e0 <timer_thread_mutex>) at ./nptl/pthread_cond_wait.c:627
+#5  0x000057713be498a3 in nr_pdcp_timer_thread (_nr_pdcp_ue_manager=0x57713f2e8d20) at /oai-ran/openair2/LAYER2/nr_pdcp/nr_pdcp_timer_thread.c:48
+#6  0x00007422cecd4ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#7  0x00007422ced66850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 4 (Thread 0x7422cd200640 (LWP 13) "PDCP data ind"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x57713d248ed8 <pq+720088>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x57713d248ed8 <pq+720088>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x57713d248ed8 <pq+720088>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007422cecd3a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x57713d248e88 <pq+720008>, cond=0x57713d248eb0 <pq+720048>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x57713d248eb0 <pq+720048>, mutex=mutex@entry=0x57713d248e88 <pq+720008>) at ./nptl/pthread_cond_wait.c:627
+#5  0x000057713be3f64b in pdcp_data_ind_thread (_=<optimized out>) at /oai-ran/openair2/LAYER2/nr_pdcp/nr_pdcp_oai_api.c:326
+#6  0x00007422cecd4ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#7  0x00007422ced66850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 3 (Thread 0x7422cdc00640 (LWP 12) "RLC queue"):
+#0  __futex_abstimed_wait_common64 (private=0, cancel=true, abstime=0x0, op=393, expected=0, futex_word=0x57713d30c438 <q+800088>) at ./nptl/futex-internal.c:57
+#1  __futex_abstimed_wait_common (cancel=true, private=0, abstime=0x0, clockid=0, expected=0, futex_word=0x57713d30c438 <q+800088>) at ./nptl/futex-internal.c:87
+#2  __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x57713d30c438 <q+800088>, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#3  0x00007422cecd3a41 in __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x57713d30c3e8 <q+800008>, cond=0x57713d30c410 <q+800048>) at ./nptl/pthread_cond_wait.c:503
+#4  ___pthread_cond_wait (cond=cond@entry=0x57713d30c410 <q+800048>, mutex=mutex@entry=0x57713d30c3e8 <q+800008>) at ./nptl/pthread_cond_wait.c:627
+#5  0x000057713be3d7eb in rlc_data_req_thread (_=<optimized out>) at /oai-ran/openair2/LAYER2/nr_pdcp/nr_pdcp_oai_api.c:158
+#6  0x00007422cecd4ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#7  0x00007422ced66850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 2 (Thread 0x7422ce600640 (LWP 11) "MAC_STATS"):
+#0  0x00007422ced257f8 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=req@entry=0x7422ce5f6c30, rem=rem@entry=0x7422ce5f6c30) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:78
+#1  0x00007422ced2a677 in __GI___nanosleep (req=req@entry=0x7422ce5f6c30, rem=rem@entry=0x7422ce5f6c30) at ../sysdeps/unix/sysv/linux/nanosleep.c:25
+#2  0x00007422ced2a5ae in __sleep (seconds=0, seconds@entry=1) at ../sysdeps/posix/sleep.c:55
+#3  0x000057713bf43b43 in nrmac_stats_thread (arg=0x57713f32a420) at /oai-ran/openair2/LAYER2/NR_MAC_gNB/main.c:103
+#4  0x00007422cecd4ac3 in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:442
+#5  0x00007422ced66850 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
+Thread 1 (Thread 0x7422cec3f000 (LWP 7) "nr-softmodem"):
+#0  0x00007422ced2a42f in __GI___wait4 (pid=15, stat_loc=stat_loc@entry=0x7ffd7ad76fe8, options=options@entry=0, usage=usage@entry=0x0) at ../sysdeps/unix/sysv/linux/wait4.c:30
+#1  0x00007422ced2a3ab in __GI___waitpid (pid=<optimized out>, stat_loc=stat_loc@entry=0x7ffd7ad76fe8, options=options@entry=0) at ./posix/waitpid.c:38
+#2  0x00007422cec90bdb in do_system (line=line@entry=0x7ffd7ad773c0 "gdb -ex='set confirm off' -ex 'thread apply all bt' -ex q -p 7 < /dev/null") at ../sysdeps/posix/system.c:171
+#3  0x00007422cec90d7e in __libc_system (line=line@entry=0x7ffd7ad773c0 "gdb -ex='set confirm off' -ex 'thread apply all bt' -ex q -p 7 < /dev/null") at ../sysdeps/posix/system.c:207
+#4  0x000057713bc527c5 in set_tdd_config_nr (cfg=cfg@entry=0x57713f32bc78, mu=1, nrofDownlinkSlots=7, nrofDownlinkSymbols=6, nrofUplinkSlots=2, nrofUplinkSymbols=<optimized out>) at /oai-ran/openair1/SCHED_NR/phy_frame_config_nr.c:74
+#5  0x000057713be943e4 in config_common (scc=0x57713f2fe850, config=0x7ffd7ad77fb0, nrmac=0x57713f32a420) at /oai-ran/openair2/LAYER2/NR_MAC_gNB/config.c:592
+#6  nr_mac_config_scc (nrmac=<optimized out>, scc=scc@entry=0x57713f2fe850, config=config@entry=0x7ffd7ad77fb0) at /oai-ran/openair2/LAYER2/NR_MAC_gNB/config.c:686
+#7  0x000057713bf16fda in RCconfig_nr_macrlc (cfg=cfg@entry=0x57713f2bc130) at /oai-ran/openair2/GNB_APP/gnb_config.c:1499
+#8  0x000057713bc0b6c4 in create_gNB_tasks (cfg=0x57713f2bc130, node_type=ngran_gNB) at /oai-ran/executables/nr-softmodem.c:246
+#9  main (argc=<optimized out>, argv=0x7ffd7ad83218) at /oai-ran/executables/nr-softmodem.c:539
+Detaching from program: /opt/oai-gnb/bin/nr-softmodem, process 7
+[Inferior 1 (process 7) detached]
+CMDLINE: "/opt/oai-gnb/bin/nr-softmodem" "-O" "/opt/oai-gnb/etc/gnb.yaml" 
+[CONFIG] function config_yaml_init returned 0
+/oai-ran/openair1/SCHED_NR/phy_frame_config_nr.c:74 set_tdd_config_nr() Exiting OAI softmodem: _Assert_Exit_
+[INFO  tini (1)] Spawned child process '/opt/oai-gnb/bin/entrypoint.sh' with pid '7'
+[INFO  tini (1)] Main child exited normally (with status '255')

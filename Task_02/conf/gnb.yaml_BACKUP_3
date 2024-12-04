@@ -1,0 +1,89 @@
+RC.nb_nr_inst: 1 
+rfsimulator: "server"
+use_sa_tdd_mono: "yes"
+gnb_name: "gnb-rfsim"
+tac: 1
+mcc: "208"
+mnc: "99"
+mnc_length: 2
+nssai_sst: 1
+nssai_sd0: 1
+nssai_sd1: 112233
+amf_ip_address: "192.168.71.132"
+gnb_nga_if_name: "eth0"
+gnb_nga_ip_address: "192.168.71.136"
+gnb_ngu_if_name: "eth0"
+gnb_ngu_ip_address: "192.168.71.136"
+use_additional_options: "--sa -E --rfsim"
+
+Active_gNBs:
+  - gnb-rfsim
+Asn1_verbosity: none
+gNBs:
+  - gNB_ID: 0xe00
+    gNB_name: gnb-rfsim
+    tracking_area_code: 1
+    plmn_list:
+      - mcc: 208
+        mnc: 99
+        mnc_length: 2
+        snssaiList:
+          - sst: 1
+            sd: 0xffffff
+    nr_cellid: 12345678
+    servingCellConfigCommon:
+      - physCellId: 0
+        absoluteFrequencySSB: 621312
+        dl_absoluteFrequencyPointA: 620040
+        dl_subcarrierSpacing: 1
+        dl_carrierBandwidth: 106
+        initialDLBWPlocationAndBandwidth: 28875
+        initialDLBWPsubcarrierSpacing: 1
+        pMax: 20
+        ul_frequencyBand: 78
+        ul_subcarrierSpacing: 1
+        ul_carrierBandwidth: 106
+        initialULBWPlocationAndBandwidth: 28875
+        initialULBWPsubcarrierSpacing: 1
+        
+        # Configuration TDD
+        tdd-UL-DL-ConfigurationCommon:
+          referenceSubcarrierSpacing: 1
+          dl_UL_TransmissionPeriodicity: 6 # Correspond à 5 ms
+          nrofDownlinkSlots: 7
+          nrofDownlinkSymbols: 6
+          nrofUplinkSlots: 2
+          nrofUplinkSymbols: 4
+          nrofMixedSlots: 1
+
+    SCTP:
+      SCTP_INSTREAMS: 2
+      SCTP_OUTSTREAMS: 2
+    amf_ip_address:
+      - ipv4: 192.168.71.132
+    NETWORK_INTERFACES:
+      GNB_IPV4_ADDRESS_FOR_NG_AMF: 192.168.71.140
+      GNB_IPV4_ADDRESS_FOR_NGU: 192.168.71.140
+      GNB_PORT_FOR_S1U: 2152
+
+MACRLCs:
+  - num_cc: 1
+    tr_s_preference: local_L1
+    tr_n_preference: local_RRC
+    pusch_TargetSNRx10: 200
+    pucch_TargetSNRx10: 200
+
+L1s:
+  - num_cc: 1
+    tr_n_preference: local_mac
+    prach_dtx_threshold: 200
+
+RUs:
+  - local_rf: yes
+    nb_tx: 1
+    nb_rx: 1
+    att_tx: 0
+    att_rx: 0
+    bands: [78]
+    max_pdschReferenceSignalPower: -27
+    max_rxgain: 75

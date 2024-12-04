@@ -1,0 +1,12 @@
+==================================
+/proc/sys/kernel/core_pattern=|/usr/share/apport/apport -p%p -s%s -c%c -d%d -P%P -u%u -g%g -- %E
+No configuration file /opt/oai-gnb/etc/gnb.conf found: attempting to find YAML config
+No configuration file /opt/oai-gnb/etc/gnb.yaml found. Please mount either at /opt/oai-gnb/etc/gnb.conf or /opt/oai-gnb/etc/gnb.yaml
+[INFO  tini (1)] Spawned child process '/opt/oai-gnb/bin/entrypoint.sh' with pid '7'
+[INFO  tini (1)] Main child exited normally (with status '255')
+==================================
+/proc/sys/kernel/core_pattern=|/usr/share/apport/apport -p%p -s%s -c%c -d%d -P%P -u%u -g%g -- %E
+No configuration file /opt/oai-gnb/etc/gnb.conf found: attempting to find YAML config
+No configuration file /opt/oai-gnb/etc/gnb.yaml found. Please mount either at /opt/oai-gnb/etc/gnb.conf or /opt/oai-gnb/etc/gnb.yaml
+[INFO  tini (1)] Spawned child process '/opt/oai-gnb/bin/entrypoint.sh' with pid '7'
+[INFO  tini (1)] Main child exited normally (with status '255')

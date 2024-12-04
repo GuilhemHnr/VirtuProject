@@ -1,0 +1,168 @@
+==================================
+/proc/sys/kernel/core_pattern=|/usr/share/apport/apport -p%p -s%s -c%c -d%d -P%P -u%u -g%g -- %E
+No configuration file /opt/oai-gnb/etc/gnb.conf found: attempting to find YAML config
+==================================
+== Configuration file:
+RC:
+  nb_nr_inst: 1 
+rfsimulator: "server"
+use_sa_tdd_mono: "yes"
+gnb_name: "gnb-rfsim"
+tac: 1
+mcc: "208"
+mnc: "99"
+mnc_length: 2
+nssai_sst: 1
+nssai_sd0: 1
+nssai_sd1: 112233
+amf_ip_address: "192.168.71.132"
+gnb_nga_if_name: "eth0"
+gnb_nga_ip_address: "192.168.71.136"
+gnb_ngu_if_name: "eth0"
+gnb_ngu_ip_address: "192.168.71.136"
+use_additional_options: "--sa -E --rfsim"==================================
+== Load USRP binaries
+==================================
+== Starting gNB soft modem
+/opt/oai-gnb/bin/nr-softmodem -O /opt/oai-gnb/etc/gnb.yaml
+[UTIL]   running in SA mode (no --phy-test, --do-ra, --nsa option present)
+[0m[OPT]   OPT disabled
+[0m[HW]   Version: Branch: HEAD Abrev. Hash: 03946cd47b Date: Wed Nov 27 08:16:32 2024 +0000
+[0mGNU gdb (Ubuntu 12.1-0ubuntu1~22.04.2) 12.1
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+Attaching to process 7
+Reading symbols from /opt/oai-gnb/bin/nr-softmodem...
+Reading symbols from /lib/x86_64-linux-gnu/libz.so.1...
+(No debugging symbols found in /lib/x86_64-linux-gnu/libz.so.1)
+Reading symbols from /lib/x86_64-linux-gnu/libsctp.so.1...
+(No debugging symbols found in /lib/x86_64-linux-gnu/libsctp.so.1)
+Reading symbols from /lib/x86_64-linux-gnu/libcrypto.so.3...
+(No debugging symbols found in /lib/x86_64-linux-gnu/libcrypto.so.3)
+Reading symbols from /lib/x86_64-linux-gnu/libstdc++.so.6...
+(No debugging symbols found in /lib/x86_64-linux-gnu/libstdc++.so.6)
+Reading symbols from /lib/x86_64-linux-gnu/libm.so.6...
+Reading symbols from /usr/lib/debug/.build-id/a5/08ec5d8bf12fb7fd08204e0f87518e5cd0b102.debug...
+Reading symbols from /lib/x86_64-linux-gnu/libgcc_s.so.1...
+(No debugging symbols found in /lib/x86_64-linux-gnu/libgcc_s.so.1)
+Reading symbols from /lib/x86_64-linux-gnu/libc.so.6...
+Reading symbols from /usr/lib/debug/.build-id/49/0fef8403240c91833978d494d39e537409b92e.debug...
+Reading symbols from /lib64/ld-linux-x86-64.so.2...
+Reading symbols from /usr/lib/debug/.build-id/41/86944c50f8a32b47d74931e3f512b811813b64.debug...
+Reading symbols from /usr/local/lib/libparams_yaml.so...
+Reading symbols from /lib/x86_64-linux-gnu/libyaml-cpp.so.0.7...
+(No debugging symbols found in /lib/x86_64-linux-gnu/libyaml-cpp.so.0.7)
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x0000780ef49413ea in __GI___wait4 (pid=11, stat_loc=stat_loc@entry=0x7ffe9590b378, options=options@entry=0, usage=usage@entry=0x0) at ../sysdeps/unix/sysv/linux/wait4.c:30
+
+Thread 1 (Thread 0x780ef4856000 (LWP 7) "nr-softmodem"):
+#0  0x0000780ef49413ea in __GI___wait4 (pid=11, stat_loc=stat_loc@entry=0x7ffe9590b378, options=options@entry=0, usage=usage@entry=0x0) at ../sysdeps/unix/sysv/linux/wait4.c:30
+#1  0x0000780ef49413ab in __GI___waitpid (pid=<optimized out>, stat_loc=stat_loc@entry=0x7ffe9590b378, options=options@entry=0) at ./posix/waitpid.c:38
+#2  0x0000780ef48a7bdb in do_system (line=line@entry=0x7ffe9590b920 "gdb -ex='set confirm off' -ex 'thread apply all bt' -ex q -p 7 < /dev/null") at ../sysdeps/posix/system.c:171
+#3  0x0000780ef48a7d7e in __libc_system (line=line@entry=0x7ffe9590b920 "gdb -ex='set confirm off' -ex 'thread apply all bt' -ex q -p 7 < /dev/null") at ../sysdeps/posix/system.c:207
+#4  0x00005894acda6847 in NRRCConfig () at /oai-ran/openair2/GNB_APP/gnb_config.c:2186
+#5  0x00005894acaa2121 in main (argc=<optimized out>, argv=0x7ffe9590c8c8) at /oai-ran/executables/nr-softmodem.c:526
+Detaching from program: /opt/oai-gnb/bin/nr-softmodem, process 7
+[Inferior 1 (process 7) detached]
+CMDLINE: "/opt/oai-gnb/bin/nr-softmodem" "-O" "/opt/oai-gnb/etc/gnb.yaml" 
+[CONFIG] function config_yaml_init returned 0
+/oai-ran/openair2/GNB_APP/gnb_config.c:2186 NRRCConfig() Exiting OAI softmodem: _Assert_Exit_
+[INFO  tini (1)] Spawned child process '/opt/oai-gnb/bin/entrypoint.sh' with pid '7'
+[INFO  tini (1)] Main child exited normally (with status '255')
+==================================
+/proc/sys/kernel/core_pattern=|/usr/share/apport/apport -p%p -s%s -c%c -d%d -P%P -u%u -g%g -- %E
+No configuration file /opt/oai-gnb/etc/gnb.conf found: attempting to find YAML config
+==================================
+== Configuration file:
+RC:
+  nb_nr_inst: 1 
+rfsimulator: "server"
+use_sa_tdd_mono: "yes"
+gnb_name: "gnb-rfsim"
+tac: 1
+mcc: "208"
+mnc: "99"
+mnc_length: 2
+nssai_sst: 1
+nssai_sd0: 1
+nssai_sd1: 112233
+amf_ip_address: "192.168.71.132"
+gnb_nga_if_name: "eth0"
+gnb_nga_ip_address: "192.168.71.136"
+gnb_ngu_if_name: "eth0"
+gnb_ngu_ip_address: "192.168.71.136"
+use_additional_options: "--sa -E --rfsim"==================================
+== Load USRP binaries
+==================================
+== Starting gNB soft modem
+/opt/oai-gnb/bin/nr-softmodem -O /opt/oai-gnb/etc/gnb.yaml
+[UTIL]   running in SA mode (no --phy-test, --do-ra, --nsa option present)
+[0m[OPT]   OPT disabled
+[0m[HW]   Version: Branch: HEAD Abrev. Hash: 03946cd47b Date: Wed Nov 27 08:16:32 2024 +0000
+[0mGNU gdb (Ubuntu 12.1-0ubuntu1~22.04.2) 12.1
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+Attaching to process 7
+Reading symbols from /opt/oai-gnb/bin/nr-softmodem...
+Reading symbols from /lib/x86_64-linux-gnu/libz.so.1...
+(No debugging symbols found in /lib/x86_64-linux-gnu/libz.so.1)
+Reading symbols from /lib/x86_64-linux-gnu/libsctp.so.1...
+(No debugging symbols found in /lib/x86_64-linux-gnu/libsctp.so.1)
+Reading symbols from /lib/x86_64-linux-gnu/libcrypto.so.3...
+(No debugging symbols found in /lib/x86_64-linux-gnu/libcrypto.so.3)
+Reading symbols from /lib/x86_64-linux-gnu/libstdc++.so.6...
+(No debugging symbols found in /lib/x86_64-linux-gnu/libstdc++.so.6)
+Reading symbols from /lib/x86_64-linux-gnu/libm.so.6...
+Reading symbols from /usr/lib/debug/.build-id/a5/08ec5d8bf12fb7fd08204e0f87518e5cd0b102.debug...
+Reading symbols from /lib/x86_64-linux-gnu/libgcc_s.so.1...
+(No debugging symbols found in /lib/x86_64-linux-gnu/libgcc_s.so.1)
+Reading symbols from /lib/x86_64-linux-gnu/libc.so.6...
+Reading symbols from /usr/lib/debug/.build-id/49/0fef8403240c91833978d494d39e537409b92e.debug...
+Reading symbols from /lib64/ld-linux-x86-64.so.2...
+Reading symbols from /usr/lib/debug/.build-id/41/86944c50f8a32b47d74931e3f512b811813b64.debug...
+Reading symbols from /usr/local/lib/libparams_yaml.so...
+Reading symbols from /lib/x86_64-linux-gnu/libyaml-cpp.so.0.7...
+(No debugging symbols found in /lib/x86_64-linux-gnu/libyaml-cpp.so.0.7)
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007403ca05e3ea in __GI___wait4 (pid=11, stat_loc=stat_loc@entry=0x7ffec8747d98, options=options@entry=0, usage=usage@entry=0x0) at ../sysdeps/unix/sysv/linux/wait4.c:30
+
+Thread 1 (Thread 0x7403c9f73000 (LWP 7) "nr-softmodem"):
+#0  0x00007403ca05e3ea in __GI___wait4 (pid=11, stat_loc=stat_loc@entry=0x7ffec8747d98, options=options@entry=0, usage=usage@entry=0x0) at ../sysdeps/unix/sysv/linux/wait4.c:30
+#1  0x00007403ca05e3ab in __GI___waitpid (pid=<optimized out>, stat_loc=stat_loc@entry=0x7ffec8747d98, options=options@entry=0) at ./posix/waitpid.c:38
+#2  0x00007403c9fc4bdb in do_system (line=line@entry=0x7ffec8748340 "gdb -ex='set confirm off' -ex 'thread apply all bt' -ex q -p 7 < /dev/null") at ../sysdeps/posix/system.c:171
+#3  0x00007403c9fc4d7e in __libc_system (line=line@entry=0x7ffec8748340 "gdb -ex='set confirm off' -ex 'thread apply all bt' -ex q -p 7 < /dev/null") at ../sysdeps/posix/system.c:207
+#4  0x0000629306110847 in NRRCConfig () at /oai-ran/openair2/GNB_APP/gnb_config.c:2186
+#5  0x0000629305e0c121 in main (argc=<optimized out>, argv=0x7ffec87492e8) at /oai-ran/executables/nr-softmodem.c:526
+Detaching from program: /opt/oai-gnb/bin/nr-softmodem, process 7
+[Inferior 1 (process 7) detached]
+CMDLINE: "/opt/oai-gnb/bin/nr-softmodem" "-O" "/opt/oai-gnb/etc/gnb.yaml" 
+[CONFIG] function config_yaml_init returned 0
+/oai-ran/openair2/GNB_APP/gnb_config.c:2186 NRRCConfig() Exiting OAI softmodem: _Assert_Exit_
+[INFO  tini (1)] Spawned child process '/opt/oai-gnb/bin/entrypoint.sh' with pid '7'
+[INFO  tini (1)] Main child exited normally (with status '255')

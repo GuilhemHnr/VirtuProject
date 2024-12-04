@@ -1,36 +1,5 @@
 #!/bin/bash
 
-# -=-=-=-=-=-=-=- PULLING DOCKER IMAGES -=-=-=-=-=-=-=-
-
-echo "Pulling Docker images..."
-
-# List of docker images
-images=(
-    "mysql:5.7"
-    "oaisoftwarealliance/oai-smf:latest"
-    "oaisoftwarealliance/oai-nrf:latest"
-    "oaisoftwarealliance/oai-smf:latest"
-    "oaisoftwarealliance/oai-spgwu-tiny:latest"
-)
-
-# Pull images
-for image in "${images[@]}"; do
-    echo "Pulling $image..."
-    docker pull "$image"
-    if [ $? -ne 0 ]; then
-        echo "Error pulling $image"
-        exit 1
-    fi
-done
-
-echo "All Docker images pulled successfully!"
-
-
-
-
-----------------------------------------
-#!/bin/bash
-
 set -e
 
 echo "OAI 5G-NR RF Simulation Automation Script"
@@ -61,15 +30,21 @@ deploy_containers() {
     echo "Deploying OAI 5G Core Network..."
     cd 5g_rfsimulator
     docker-compose up -d mysql oai-nrf oai-amf oai-smf oai-spgwu oai-ext-dn
-    sleep 30  # Wait for container set up
+    sleep 40  # Wait for container set up
+    echo " -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- check containers"
+    docker-compose ps -a
 
     echo "Deploying OAI gNB in RF simulator mode..."
     docker-compose up -d oai-gnb
-    sleep 20  # Wait for container set up
+    sleep 15  # Wait for container set up
+    echo " -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- check containers"
+    docker-compose ps -a
 
     echo "Deploying OAI NR-UE in RF simulator mode..."
     docker-compose up -d oai-nr-ue
-    sleep 20  # Wait for container set up
+    sleep 15  # Wait for container set up
+    echo " -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- check containers"
+    docker-compose ps -a
 }
 
 # -=-=-=-=-=-=-=- CHECK CONNECTIVITY -=-=-=-=-=-=-=-

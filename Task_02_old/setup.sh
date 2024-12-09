@@ -9,32 +9,40 @@ echo "=========================================="
 pull_and_tag_images() {
     echo "Pulling Docker images..."
     docker pull mysql:5.7
-    docker pull oaisoftwarealliance/oai-amf:v2.0.0
-    docker pull oaisoftwarealliance/oai-smf:v2.0.0
-    docker pull oaisoftwarealliance/oai-upf:v2.0.0
-    docker pull oaisoftwarealliance/trf-gen-cn5g:focal
+    docker pull oaisoftwarealliance/oai-amf:latest
+    docker pull oaisoftwarealliance/oai-nrf:latest
+    docker pull oaisoftwarealliance/oai-smf:latest
+    docker pull oaisoftwarealliance/oai-spgwu-tiny:latest
     docker pull oaisoftwarealliance/oai-gnb:develop
     docker pull oaisoftwarealliance/oai-nr-ue:develop
+
+    echo "Re-tagging Docker images..."
+    docker image tag oaisoftwarealliance/oai-amf:latest oai-amf:latest
+    docker image tag oaisoftwarealliance/oai-nrf:latest oai-nrf:latest
+    docker image tag oaisoftwarealliance/oai-smf:latest oai-smf:latest
+    docker image tag oaisoftwarealliance/oai-spgwu-tiny:latest oai-spgwu-tiny:latest
+    docker image tag oaisoftwarealliance/oai-gnb:develop oai-gnb:develop
+    docker image tag oaisoftwarealliance/oai-nr-ue:develop oai-nr-ue:develop
 }
 
 # -=-=-=-=-=-=-=- DEPLOY DOCKER CONTAINERS -=-=-=-=-=-=-=-
 deploy_containers() {
     echo "Deploying OAI 5G Core Network..."
     cd 5g_rfsimulator
-    docker-compose up -d mysql oai-amf oai-smf oai-upf oai-ext-dn
+    docker-compose up -d mysql oai-nrf oai-amf oai-smf oai-spgwu oai-ext-dn
     sleep 40  # Wait for container set up
     echo " -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- check containers"
     docker-compose ps -a
 
     echo "Deploying OAI gNB in RF simulator mode..."
     docker-compose up -d oai-gnb
-    sleep 60  # Wait for container set up
+    sleep 15  # Wait for container set up
     echo " -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- check containers"
     docker-compose ps -a
 
     echo "Deploying OAI NR-UE in RF simulator mode..."
     docker-compose up -d oai-nr-ue
-    sleep 60  # Wait for container set up
+    sleep 15  # Wait for container set up
     echo " -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- check containers"
     docker-compose ps -a
 }
@@ -42,7 +50,7 @@ deploy_containers() {
 # -=-=-=-=-=-=-=- CHECK CONNECTIVITY -=-=-=-=-=-=-=-
 check_connectivity() {
     echo "Checking Internet connectivity from NR-UE container..."
-    docker exec -it rfsim5g-oai-nr-ue ping -I oaitun_ue1 -c 2 192.168.72.135 || {
+    docker exec -it rfsim5g-oai-nr-ue ping -I oaitun_ue1 -c 10 www.lemonde.fr || {
         echo "Ping failed!"
         exit 1
     }

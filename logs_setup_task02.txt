@@ -1,0 +1,104 @@
+OAI 5G-NR RF Simulation Automation Script
+==========================================
+Pulling Docker images...
+5.7: Pulling from library/mysql
+Digest: sha256:4bc6bc963e6d8443453676cae56536f4b8156d78bae03c0145cbe47c2aad73bb
+Status: Image is up to date for mysql:5.7
+docker.io/library/mysql:5.7
+v2.0.0: Pulling from oaisoftwarealliance/oai-amf
+Digest: sha256:e481c6c30f9b2e7763697f9ed1235bbb326aa9ab28ea48d2504e96181663b76e
+Status: Image is up to date for oaisoftwarealliance/oai-amf:v2.0.0
+docker.io/oaisoftwarealliance/oai-amf:v2.0.0
+v2.0.0: Pulling from oaisoftwarealliance/oai-smf
+Digest: sha256:f725ca008dbb21d37d250f48e7975f06e776c4a7d568b8be8c0c17d5c0bae8a7
+Status: Image is up to date for oaisoftwarealliance/oai-smf:v2.0.0
+docker.io/oaisoftwarealliance/oai-smf:v2.0.0
+v2.0.0: Pulling from oaisoftwarealliance/oai-upf
+Digest: sha256:ed69524b00b09d141a06ce985cfb0dfd3c0d725b637dddc64c8b7a72a67c7efb
+Status: Image is up to date for oaisoftwarealliance/oai-upf:v2.0.0
+docker.io/oaisoftwarealliance/oai-upf:v2.0.0
+focal: Pulling from oaisoftwarealliance/trf-gen-cn5g
+Digest: sha256:275d08f2c255123b6777a0a324d07ab25c091e5548fc7300fc008442e99e5e1c
+Status: Image is up to date for oaisoftwarealliance/trf-gen-cn5g:focal
+docker.io/oaisoftwarealliance/trf-gen-cn5g:focal
+develop: Pulling from oaisoftwarealliance/oai-gnb
+Digest: sha256:21cb3777789589cc73ea43ef91b321c56b5d080c1a2f7de0c7f2e3670acdd934
+Status: Image is up to date for oaisoftwarealliance/oai-gnb:develop
+docker.io/oaisoftwarealliance/oai-gnb:develop
+develop: Pulling from oaisoftwarealliance/oai-nr-ue
+Digest: sha256:ba87b376ab69934204ab0c037a8b8dfd3010b30432038a29b9be51af8c30d094
+Status: Image is up to date for oaisoftwarealliance/oai-nr-ue:develop
+docker.io/oaisoftwarealliance/oai-nr-ue:develop
+Deploying OAI 5G Core Network...
+ -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- check containers
+       Name                     Command                   State                   Ports            
+---------------------------------------------------------------------------------------------------
+rfsim5g-mysql        docker-entrypoint.sh mysqld      Up (healthy)     3306/tcp, 33060/tcp         
+rfsim5g-oai-amf      /openair-amf/bin/oai_amf - ...   Up (healthy)     38412/sctp, 80/tcp, 9090/tcp
+rfsim5g-oai-ext-dn   /bin/bash -c  iptables -t  ...   Up (unhealthy)                               
+rfsim5g-oai-gnb      /tini -v -- /opt/oai-gnb/b ...   Up (healthy)                                 
+rfsim5g-oai-nr-ue    /tini -v -- /opt/oai-nr-ue ...   Exit 1                                       
+rfsim5g-oai-smf      /openair-smf/bin/oai_smf - ...   Up (healthy)     80/tcp, 8080/tcp, 8805/udp  
+rfsim5g-oai-upf      /openair-upf/bin/oai_upf - ...   Up (healthy)     2152/udp, 8805/udp          
+Deploying OAI gNB in RF simulator mode...
+ -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- check containers
+       Name                     Command                   State                   Ports            
+---------------------------------------------------------------------------------------------------
+rfsim5g-mysql        docker-entrypoint.sh mysqld      Up (healthy)     3306/tcp, 33060/tcp         
+rfsim5g-oai-amf      /openair-amf/bin/oai_amf - ...   Up (healthy)     38412/sctp, 80/tcp, 9090/tcp
+rfsim5g-oai-ext-dn   /bin/bash -c  iptables -t  ...   Up (unhealthy)                               
+rfsim5g-oai-gnb      /tini -v -- /opt/oai-gnb/b ...   Up (healthy)                                 
+rfsim5g-oai-nr-ue    /tini -v -- /opt/oai-nr-ue ...   Exit 1                                       
+rfsim5g-oai-smf      /openair-smf/bin/oai_smf - ...   Up (healthy)     80/tcp, 8080/tcp, 8805/udp  
+rfsim5g-oai-upf      /openair-upf/bin/oai_upf - ...   Up (healthy)     2152/udp, 8805/udp          
+Deploying OAI NR-UE in RF simulator mode...
+ -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- check containers
+       Name                     Command                   State                   Ports            
+---------------------------------------------------------------------------------------------------
+rfsim5g-mysql        docker-entrypoint.sh mysqld      Up (healthy)     3306/tcp, 33060/tcp         
+rfsim5g-oai-amf      /openair-amf/bin/oai_amf - ...   Up (healthy)     38412/sctp, 80/tcp, 9090/tcp
+rfsim5g-oai-ext-dn   /bin/bash -c  iptables -t  ...   Up (unhealthy)                               
+rfsim5g-oai-gnb      /tini -v -- /opt/oai-gnb/b ...   Up (healthy)                                 
+rfsim5g-oai-nr-ue    /tini -v -- /opt/oai-nr-ue ...   Up (healthy)                                 
+rfsim5g-oai-smf      /openair-smf/bin/oai_smf - ...   Up (healthy)     80/tcp, 8080/tcp, 8805/udp  
+rfsim5g-oai-upf      /openair-upf/bin/oai_upf - ...   Up (healthy)     2152/udp, 8805/udp          
+Checking Internet connectivity from NR-UE container...
+PING 192.168.72.135 (192.168.72.135) from 12.1.1.2 oaitun_ue1: 56(84) bytes of data.
+64 bytes from 192.168.72.135: icmp_seq=1 ttl=63 time=14.4 ms
+64 bytes from 192.168.72.135: icmp_seq=2 ttl=63 time=24.8 ms
+
+--- 192.168.72.135 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 14.353/19.578/24.803/5.225 ms
+Ping successful!
+Starting iperf server inside NR-UE container...
+Starting iperf client inside ext-dn container...
+------------------------------------------------------------
+Client connecting to 12.1.1.2, UDP port 5001
+Sending 1470 byte datagrams, IPG target: 22968.75 us (kalman adjust)
+UDP buffer size:  208 KByte (default)
+------------------------------------------------------------
+[  3] local 192.168.72.135 port 60761 connected with 12.1.1.2 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  64.6 KBytes   529 Kbits/sec
+[  3]  1.0- 2.0 sec  63.2 KBytes   517 Kbits/sec
+[  3]  2.0- 3.0 sec  61.7 KBytes   506 Kbits/sec
+[  3]  3.0- 4.0 sec  63.2 KBytes   517 Kbits/sec
+[  3]  4.0- 5.0 sec  61.7 KBytes   506 Kbits/sec
+[  3]  5.0- 6.0 sec  63.2 KBytes   517 Kbits/sec
+[  3]  6.0- 7.0 sec  61.7 KBytes   506 Kbits/sec
+[  3]  7.0- 8.0 sec  63.2 KBytes   517 Kbits/sec
+[  3]  8.0- 9.0 sec  61.7 KBytes   506 Kbits/sec
+[  3]  9.0-10.0 sec  63.2 KBytes   517 Kbits/sec
+[  3] 10.0-11.0 sec  61.7 KBytes   506 Kbits/sec
+[  3] 11.0-12.0 sec  63.2 KBytes   517 Kbits/sec
+[  3] 12.0-13.0 sec  61.7 KBytes   506 Kbits/sec
+[  3] 13.0-14.0 sec  63.2 KBytes   517 Kbits/sec
+[  3] 14.0-15.0 sec  63.2 KBytes   517 Kbits/sec
+[  3] 15.0-16.0 sec  61.7 KBytes   506 Kbits/sec
+[  3] 16.0-17.0 sec  63.2 KBytes   517 Kbits/sec
+[  3] 17.0-18.0 sec  61.7 KBytes   506 Kbits/sec
+[  3] 18.0-19.0 sec  63.2 KBytes   517 Kbits/sec
+[  3]  0.0-20.0 sec  1.22 MBytes   512 Kbits/sec
+[  3] Sent 871 datagrams
+FINISHED

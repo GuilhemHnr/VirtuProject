@@ -1,0 +1,260 @@
+[2024-12-05 11:06:11.657] [smf_app] [start] Options parsed
+[2024-12-05 11:06:11.657] [config ] [info] Reading NF configuration from /openair-smf/etc/config.yaml
+[2024-12-05 11:06:11.668] [config ] [debug] Unknown NF upf in configuration. Ignored
+[2024-12-05 11:06:11.669] [config ] [debug] Validating configuration of log_level
+[2024-12-05 11:06:11.669] [config ] [debug] Validating configuration of register_nf
+[2024-12-05 11:06:11.669] [config ] [debug] Validating configuration of http_version
+[2024-12-05 11:06:11.669] [config ] [debug] Validating configuration of curl_timeout
+[2024-12-05 11:06:11.669] [config ] [debug] Validating configuration of nrf
+[2024-12-05 11:06:11.669] [config ] [debug] Validating configuration of pcf
+[2024-12-05 11:06:11.669] [config ] [debug] Validating configuration of udm
+[2024-12-05 11:06:11.669] [config ] [debug] Validating configuration of amf
+[2024-12-05 11:06:11.671] [config ] [debug] Validating configuration of SMF Config
+[2024-12-05 11:06:11.674] [config ] [debug] Validating configuration of DNN
+[2024-12-05 11:06:11.674] [config ] [debug] Validating configuration of database
+[2024-12-05 11:06:11.675] [config ] [info] Configured host oai-upf is an FQDN. Resolve on SMF startup
+[2024-12-05 11:06:17.706] [config ] [info] ==== OPENAIRINTERFACE smf vBranch: HEAD Abrev. Hash: f499edf0 Date: Thu Dec 14 10:03:33 2023 +0000 ====
+[2024-12-05 11:06:17.706] [config ] [info] Basic Configuration:
+[2024-12-05 11:06:17.706] [config ] [info]   - log_level..................................: debug
+[2024-12-05 11:06:17.706] [config ] [info]   - register_nf................................: No
+[2024-12-05 11:06:17.706] [config ] [info]   - http_version...............................: 1
+[2024-12-05 11:06:17.706] [config ] [info]   - Curl Timeout...............................: 3000 (ms)
+[2024-12-05 11:06:17.706] [config ] [info] SMF Config:
+[2024-12-05 11:06:17.706] [config ] [info]   - host.......................................: oai-smf
+[2024-12-05 11:06:17.706] [config ] [info]   - sbi
+[2024-12-05 11:06:17.706] [config ] [info]     + URL......................................: http://oai-smf:80
+[2024-12-05 11:06:17.706] [config ] [info]     + API Version..............................: v1
+[2024-12-05 11:06:17.706] [config ] [info]     + IPv4 Address ............................: 192.168.71.133
+[2024-12-05 11:06:17.706] [config ] [info]   - n4
+[2024-12-05 11:06:17.706] [config ] [info]     + Port.....................................: 8805
+[2024-12-05 11:06:17.706] [config ] [info]     + IPv4 Address ............................: 192.168.71.133
+[2024-12-05 11:06:17.706] [config ] [info]     + MTU......................................: 1500
+[2024-12-05 11:06:17.706] [config ] [info]     + Interface name: .........................: eth0
+[2024-12-05 11:06:17.706] [config ] [info]   supported_features:
+[2024-12-05 11:06:17.706] [config ] [info]     + use_local_subscription_info..............: Yes
+[2024-12-05 11:06:17.706] [config ] [info]     + use_local_pcc_rules......................: Yes
+[2024-12-05 11:06:17.706] [config ] [info]     + use_external_ausf........................: No
+[2024-12-05 11:06:17.706] [config ] [info]     + use_external_udm.........................: No
+[2024-12-05 11:06:17.706] [config ] [info]     + use_external_nssf........................: No
+[2024-12-05 11:06:17.706] [config ] [info]   - ue_mtu.....................................: 1500
+[2024-12-05 11:06:17.706] [config ] [info]   - p-cscf_ipv4................................: 127.0.0.1
+[2024-12-05 11:06:17.706] [config ] [info]   - p-cscf_ipv6................................: fe80::7915:f408:1787:db8b
+[2024-12-05 11:06:17.706] [config ] [info]   UPF List:
+[2024-12-05 11:06:17.706] [config ] [info]     + oai-upf
+[2024-12-05 11:06:17.706] [config ] [info]       + host...................................: oai-upf
+[2024-12-05 11:06:17.706] [config ] [info]       + port...................................: 8805
+[2024-12-05 11:06:17.706] [config ] [info]       + enable_usage_reporting.................: No
+[2024-12-05 11:06:17.706] [config ] [info]       + enable_dl_pdr_in_session_establishment.: No
+[2024-12-05 11:06:17.706] [config ] [info]       + upf_info:
+[2024-12-05 11:06:17.706] [config ] [info]         - interface_upf_info_item:
+[2024-12-05 11:06:17.706] [config ] [info]           + interface_type.....................: N3
+[2024-12-05 11:06:17.706] [config ] [info]           + network_instance...................: access.oai.org
+[2024-12-05 11:06:17.706] [config ] [info]         - interface_upf_info_item:
+[2024-12-05 11:06:17.706] [config ] [info]           + interface_type.....................: N6
+[2024-12-05 11:06:17.706] [config ] [info]           + network_instance...................: core.oai.org
+[2024-12-05 11:06:17.706] [config ] [info]   Local Subscription Infos:
+[2024-12-05 11:06:17.706] [config ] [info]     - local_subscription_info
+[2024-12-05 11:06:17.706] [config ] [info]       + dnn....................................: oai
+[2024-12-05 11:06:17.706] [config ] [info]       + ssc_mode...............................: 1
+[2024-12-05 11:06:17.706] [config ] [info]       + snssai:
+[2024-12-05 11:06:17.706] [config ] [info]         - sst..................................: 1
+[2024-12-05 11:06:17.706] [config ] [info]         - sd...................................: 0xFFFFFF (16777215)
+[2024-12-05 11:06:17.706] [config ] [info]       + qos_profile:
+[2024-12-05 11:06:17.706] [config ] [info]         - 5qi..................................: 9
+[2024-12-05 11:06:17.706] [config ] [info]         - priority.............................: 1
+[2024-12-05 11:06:17.706] [config ] [info]         - arp_priority.........................: 1
+[2024-12-05 11:06:17.706] [config ] [info]         - arp_preempt_vulnerability............: NOT_PREEMPTABLE
+[2024-12-05 11:06:17.706] [config ] [info]         - arp_preempt_capability...............: NOT_PREEMPT
+[2024-12-05 11:06:17.706] [config ] [info]         - session_ambr_dl......................: 400Mbps
+[2024-12-05 11:06:17.706] [config ] [info]         - session_ambr_ul......................: 200Mbps
+[2024-12-05 11:06:17.706] [config ] [info]   + smf_info:
+[2024-12-05 11:06:17.706] [config ] [info]     - snssai_smf_info_item:
+[2024-12-05 11:06:17.706] [config ] [info]       + snssai:
+[2024-12-05 11:06:17.706] [config ] [info]         - sst..................................: 1
+[2024-12-05 11:06:17.706] [config ] [info]         - sd...................................: 0xFFFFFF (16777215)
+[2024-12-05 11:06:17.706] [config ] [info]       + dnns:
+[2024-12-05 11:06:17.706] [config ] [info]         - dnn..................................: oai
+[2024-12-05 11:06:17.706] [config ] [info] Peer NF Configuration:
+[2024-12-05 11:06:17.706] [config ] [info]   amf:
+[2024-12-05 11:06:17.706] [config ] [info]     - host.....................................: oai-amf
+[2024-12-05 11:06:17.706] [config ] [info]     - sbi
+[2024-12-05 11:06:17.706] [config ] [info]       + URL....................................: http://oai-amf:80
+[2024-12-05 11:06:17.706] [config ] [info]       + API Version............................: v1
+[2024-12-05 11:06:17.706] [config ] [info] DNNs:
+[2024-12-05 11:06:17.706] [config ] [info] - DNN:
+[2024-12-05 11:06:17.706] [config ] [info]     + DNN......................................: oai
+[2024-12-05 11:06:17.706] [config ] [info]     + PDU session type.........................: IPV4
+[2024-12-05 11:06:17.706] [config ] [info]     + IPv4 subnet..............................: 12.1.1.0/24
+[2024-12-05 11:06:17.706] [config ] [info]     + DNS Settings:
+[2024-12-05 11:06:17.706] [config ] [info]       - primary_dns_ipv4.......................: 172.21.3.100
+[2024-12-05 11:06:17.706] [config ] [info]       - primary_dns_ipv6.......................: 2001:4860:4860::8888
+[2024-12-05 11:06:17.706] [config ] [info]       - secondary_dns_ipv4.....................: 8.8.8.8
+[2024-12-05 11:06:17.706] [config ] [info]       - secondary_dns_ipv6.....................: 2001:4860:4860::8888
+[2024-12-05 11:07:09.893] [smf_app] [start] Options parsed
+[2024-12-05 11:07:09.893] [config ] [info] Reading NF configuration from /openair-smf/etc/config.yaml
+[2024-12-05 11:07:09.904] [config ] [debug] Unknown NF upf in configuration. Ignored
+[2024-12-05 11:07:09.905] [config ] [debug] Validating configuration of log_level
+[2024-12-05 11:07:09.905] [config ] [debug] Validating configuration of register_nf
+[2024-12-05 11:07:09.905] [config ] [debug] Validating configuration of http_version
+[2024-12-05 11:07:09.905] [config ] [debug] Validating configuration of curl_timeout
+[2024-12-05 11:07:09.905] [config ] [debug] Validating configuration of nrf
+[2024-12-05 11:07:09.905] [config ] [debug] Validating configuration of pcf
+[2024-12-05 11:07:09.905] [config ] [debug] Validating configuration of udm
+[2024-12-05 11:07:09.905] [config ] [debug] Validating configuration of amf
+[2024-12-05 11:07:09.906] [config ] [debug] Validating configuration of SMF Config
+[2024-12-05 11:07:09.909] [config ] [debug] Validating configuration of DNN
+[2024-12-05 11:07:09.910] [config ] [debug] Validating configuration of database
+[2024-12-05 11:07:09.911] [config ] [info] Configured host oai-upf is an FQDN. Resolve on SMF startup
+[2024-12-05 11:07:09.912] [smf_app] [debug] Resolved a DNS (name oai-upf, protocol http): Ip Addr 192.168.71.134, port 80
+[2024-12-05 11:07:09.912] [config ] [warning] Enable UR and enable DL PDR in PFCP Session Establishment per UPF is not supported currently, we use the same values for all UPFs.
+[2024-12-05 11:07:09.912] [config ] [debug] DNN oai: -- First UE IPv4: 12.1.1.2 -- Last UE IPv4: 12.1.1.254
+[2024-12-05 11:07:09.912] [config ] [info] ==== OPENAIRINTERFACE smf vBranch: HEAD Abrev. Hash: f499edf0 Date: Thu Dec 14 10:03:33 2023 +0000 ====
+[2024-12-05 11:07:09.912] [config ] [info] Basic Configuration:
+[2024-12-05 11:07:09.912] [config ] [info]   - log_level..................................: debug
+[2024-12-05 11:07:09.912] [config ] [info]   - register_nf................................: No
+[2024-12-05 11:07:09.912] [config ] [info]   - http_version...............................: 1
+[2024-12-05 11:07:09.912] [config ] [info]   - Curl Timeout...............................: 3000 (ms)
+[2024-12-05 11:07:09.912] [config ] [info] SMF Config:
+[2024-12-05 11:07:09.912] [config ] [info]   - host.......................................: oai-smf
+[2024-12-05 11:07:09.912] [config ] [info]   - sbi
+[2024-12-05 11:07:09.912] [config ] [info]     + URL......................................: http://oai-smf:80
+[2024-12-05 11:07:09.912] [config ] [info]     + API Version..............................: v1
+[2024-12-05 11:07:09.912] [config ] [info]     + IPv4 Address ............................: 192.168.71.133
+[2024-12-05 11:07:09.912] [config ] [info]   - n4
+[2024-12-05 11:07:09.912] [config ] [info]     + Port.....................................: 8805
+[2024-12-05 11:07:09.912] [config ] [info]     + IPv4 Address ............................: 192.168.71.133
+[2024-12-05 11:07:09.912] [config ] [info]     + MTU......................................: 1500
+[2024-12-05 11:07:09.912] [config ] [info]     + Interface name: .........................: eth0
+[2024-12-05 11:07:09.912] [config ] [info]   supported_features:
+[2024-12-05 11:07:09.912] [config ] [info]     + use_local_subscription_info..............: Yes
+[2024-12-05 11:07:09.912] [config ] [info]     + use_local_pcc_rules......................: Yes
+[2024-12-05 11:07:09.912] [config ] [info]     + use_external_ausf........................: No
+[2024-12-05 11:07:09.912] [config ] [info]     + use_external_udm.........................: No
+[2024-12-05 11:07:09.912] [config ] [info]     + use_external_nssf........................: No
+[2024-12-05 11:07:09.912] [config ] [info]   - ue_mtu.....................................: 1500
+[2024-12-05 11:07:09.912] [config ] [info]   - p-cscf_ipv4................................: 127.0.0.1
+[2024-12-05 11:07:09.912] [config ] [info]   - p-cscf_ipv6................................: fe80::7915:f408:1787:db8b
+[2024-12-05 11:07:09.912] [config ] [info]   UPF List:
+[2024-12-05 11:07:09.912] [config ] [info]     + oai-upf
+[2024-12-05 11:07:09.912] [config ] [info]       + host...................................: oai-upf
+[2024-12-05 11:07:09.912] [config ] [info]       + port...................................: 8805
+[2024-12-05 11:07:09.912] [config ] [info]       + enable_usage_reporting.................: No
+[2024-12-05 11:07:09.912] [config ] [info]       + enable_dl_pdr_in_session_establishment.: No
+[2024-12-05 11:07:09.912] [config ] [info]       + upf_info:
+[2024-12-05 11:07:09.912] [config ] [info]         - interface_upf_info_item:
+[2024-12-05 11:07:09.912] [config ] [info]           + interface_type.....................: N3
+[2024-12-05 11:07:09.912] [config ] [info]           + network_instance...................: access.oai.org
+[2024-12-05 11:07:09.912] [config ] [info]         - interface_upf_info_item:
+[2024-12-05 11:07:09.912] [config ] [info]           + interface_type.....................: N6
+[2024-12-05 11:07:09.912] [config ] [info]           + network_instance...................: core.oai.org
+[2024-12-05 11:07:09.912] [config ] [info]   Local Subscription Infos:
+[2024-12-05 11:07:09.912] [config ] [info]     - local_subscription_info
+[2024-12-05 11:07:09.912] [config ] [info]       + dnn....................................: oai
+[2024-12-05 11:07:09.912] [config ] [info]       + ssc_mode...............................: 1
+[2024-12-05 11:07:09.912] [config ] [info]       + snssai:
+[2024-12-05 11:07:09.912] [config ] [info]         - sst..................................: 1
+[2024-12-05 11:07:09.912] [config ] [info]         - sd...................................: 0xFFFFFF (16777215)
+[2024-12-05 11:07:09.912] [config ] [info]       + qos_profile:
+[2024-12-05 11:07:09.912] [config ] [info]         - 5qi..................................: 9
+[2024-12-05 11:07:09.912] [config ] [info]         - priority.............................: 1
+[2024-12-05 11:07:09.912] [config ] [info]         - arp_priority.........................: 1
+[2024-12-05 11:07:09.912] [config ] [info]         - arp_preempt_vulnerability............: NOT_PREEMPTABLE
+[2024-12-05 11:07:09.913] [config ] [info]         - arp_preempt_capability...............: NOT_PREEMPT
+[2024-12-05 11:07:09.913] [config ] [info]         - session_ambr_dl......................: 400Mbps
+[2024-12-05 11:07:09.913] [config ] [info]         - session_ambr_ul......................: 200Mbps
+[2024-12-05 11:07:09.913] [config ] [info]   + smf_info:
+[2024-12-05 11:07:09.913] [config ] [info]     - snssai_smf_info_item:
+[2024-12-05 11:07:09.913] [config ] [info]       + snssai:
+[2024-12-05 11:07:09.913] [config ] [info]         - sst..................................: 1
+[2024-12-05 11:07:09.913] [config ] [info]         - sd...................................: 0xFFFFFF (16777215)
+[2024-12-05 11:07:09.913] [config ] [info]       + dnns:
+[2024-12-05 11:07:09.913] [config ] [info]         - dnn..................................: oai
+[2024-12-05 11:07:09.913] [config ] [info] Peer NF Configuration:
+[2024-12-05 11:07:09.913] [config ] [info]   amf:
+[2024-12-05 11:07:09.913] [config ] [info]     - host.....................................: oai-amf
+[2024-12-05 11:07:09.913] [config ] [info]     - sbi
+[2024-12-05 11:07:09.913] [config ] [info]       + URL....................................: http://oai-amf:80
+[2024-12-05 11:07:09.913] [config ] [info]       + API Version............................: v1
+[2024-12-05 11:07:09.913] [config ] [info] DNNs:
+[2024-12-05 11:07:09.913] [config ] [info] - DNN:
+[2024-12-05 11:07:09.913] [config ] [info]     + DNN......................................: oai
+[2024-12-05 11:07:09.913] [config ] [info]     + PDU session type.........................: IPV4
+[2024-12-05 11:07:09.913] [config ] [info]     + IPv4 subnet..............................: 12.1.1.0/24
+[2024-12-05 11:07:09.913] [config ] [info]     + DNS Settings:
+[2024-12-05 11:07:09.913] [config ] [info]       - primary_dns_ipv4.......................: 172.21.3.100
+[2024-12-05 11:07:09.913] [config ] [info]       - primary_dns_ipv6.......................: 2001:4860:4860::8888
+[2024-12-05 11:07:09.913] [config ] [info]       - secondary_dns_ipv4.....................: 8.8.8.8
+[2024-12-05 11:07:09.913] [config ] [info]       - secondary_dns_ipv6.....................: 2001:4860:4860::8888
+[2024-12-05 11:07:09.913] [itti   ] [start] Starting...
+[2024-12-05 11:07:09.913] [itti   ] [start] Started
+[2024-12-05 11:07:09.913] [async  ] [start] Starting...
+[2024-12-05 11:07:09.913] [itti   ] [info] Starting timer_manager_task
+[2024-12-05 11:07:09.913] [async  ] [warning] Could not set schedparam to ITTI task 1, err=1
+[2024-12-05 11:07:09.913] [itti   ] [warning] Could not set schedparam to ITTI task 0, err=1
+[2024-12-05 11:07:09.914] [async  ] [start] Started
+[2024-12-05 11:07:09.914] [smf_app] [start] Starting...
+[2024-12-05 11:07:09.914] [smf_app] [info] Apply config...
+[2024-12-05 11:07:09.914] [smf_app] [info] Applied config oai
+[2024-12-05 11:07:09.914] [smf_app] [info] PAA Ipv4: 12.1.1.2
+[2024-12-05 11:07:09.914] [smf_app] [info] Applied config
+[2024-12-05 11:07:09.915] [udp    ] [debug] Creating new listen socket on address 192.168.71.133 and port 8805 
+[2024-12-05 11:07:09.915] [udp    ] [debug] udp_server::udp_server(192.168.71.133:8805)
+[2024-12-05 11:07:09.915] [udp    ] [debug] Creating new listen socket on address 192.168.71.133 and port 0 
+[2024-12-05 11:07:09.915] [udp    ] [debug] udp_server::udp_server(192.168.71.133:0)
+[2024-12-05 11:07:09.915] [pfcp   ] [info] pfcp_l4_stack created listening to 192.168.71.133:8805
+[2024-12-05 11:07:09.916] [udp    ] [warning] Could not set schedparam to ITTI task 6, err=1
+[2024-12-05 11:07:09.916] [smf_n4 ] [start] Starting...
+[2024-12-05 11:07:09.916] [udp    ] [warning] Could not set schedparam to ITTI task 6, err=1
+[2024-12-05 11:07:09.917] [smf_n4 ] [start] Started
+[2024-12-05 11:07:09.917] [smf_sbi] [start] Starting...
+[2024-12-05 11:07:09.918] [smf_sbi] [start] Started
+[2024-12-05 11:07:09.918] [smf_app] [start] Started
+[2024-12-05 11:07:09.919] [smf_app] [debug] Start a PFCP Association procedure with an UPF
+[2024-12-05 11:07:09.919] [smf_app] [debug] Resolving an FQDN/IP Addr for an UPF node
+[2024-12-05 11:07:09.919] [smf_app] [debug] Resolving an IP address (name 192.168.71.134)
+[2024-12-05 11:07:09.919] [smf_app] [debug] Reverse Resolving Try #0
+[2024-12-05 11:07:09.919] [smf_api] [info] HTTP1 server started
+[2024-12-05 11:07:09.920] [smf_app] [debug] Resolve IP Addr 192.168.71.134, FQDN rfsim5g-oai-upf.rfsim5g-oai-public-net
+[2024-12-05 11:07:09.921] [smf_n4 ] [info] handle_receive(53 bytes)
+[2024-12-05 11:07:09.921] [smf_n4 ] [debug] handle_receive_pfcp_msg msg type 6 length 49
+[2024-12-05 11:07:09.921] [smf_n4 ] [info] Received N4 ASSOCIATION SETUP RESPONSE from an UPF
+[2024-12-05 11:07:09.921] [smf_n4 ] [info] Received N4 ASSOCIATION SETUP RESPONSE
+[2024-12-05 11:07:09.921] [smf_app] [debug] Resolving an FQDN/IP Addr for an UPF node
+[2024-12-05 11:07:09.921] [smf_app] [debug] Resolving an IP address (name 192.168.71.134)
+[2024-12-05 11:07:09.921] [smf_app] [debug] Reverse Resolving Try #0
+[2024-12-05 11:07:09.922] [smf_app] [debug] Resolve IP Addr 192.168.71.134, FQDN rfsim5g-oai-upf.rfsim5g-oai-public-net
+[2024-12-05 11:07:09.922] [smf_app] [info] Cannot connect UPF to other nodes in the graph as it has no profile, just add the node
+[2024-12-05 11:07:09.922] [smf_app] [info] Assume that the UPF has a N3 and a N6 interface.
+[2024-12-05 11:07:09.922] [smf_app] [debug] Successfully added UPF node: , (2252843200)
+[2024-12-05 11:07:09.922] [smf_app] [debug] Successfully added UPF graph edge for : N3()
+[2024-12-05 11:07:09.922] [smf_app] [debug] Successfully added UPF graph edge for : N6()
+[2024-12-05 11:07:09.922] [smf_app] [debug] UPF graph 
+[2024-12-05 11:07:09.922] [smf_app] [debug] * 2252843200 --> N3(), N6(), 
+
+[2024-12-05 11:07:09.922] [smf_app] [debug] NF instance info
+[2024-12-05 11:07:09.922] [smf_app] [debug] 	Instance ID: 
+[2024-12-05 11:07:09.922] [smf_app] [debug] 	Instance name: 
+[2024-12-05 11:07:09.922] [smf_app] [debug] 	Instance type: UPF
+[2024-12-05 11:07:09.922] [smf_app] [debug] 	Status: 
+[2024-12-05 11:07:09.922] [smf_app] [debug] 	HeartBeat timer: 0
+[2024-12-05 11:07:09.922] [smf_app] [debug] 	Priority: 0
+[2024-12-05 11:07:09.922] [smf_app] [debug] 	Capacity: 0
+[2024-12-05 11:07:11.920] [smf_app] [debug] Resolving an FQDN/IP Addr for an UPF node
+[2024-12-05 11:07:11.920] [smf_app] [debug] Resolving an IP address (name 192.168.71.134)
+[2024-12-05 11:07:11.920] [smf_app] [debug] Reverse Resolving Try #0
+[2024-12-05 11:07:11.921] [smf_app] [debug] Resolve IP Addr 192.168.71.134, FQDN rfsim5g-oai-upf.rfsim5g-oai-public-net
+[2024-12-05 11:07:14.920] [smf_n4 ] [info] TIME-OUT event timer id 2
+[2024-12-05 11:07:19.922] [smf_n4 ] [info] TIME-OUT event timer id 3
+[2024-12-05 11:07:19.922] [smf_n4 ] [info] PFCP HEARTBEAT PROCEDURE hash 2252843200 starting
+[2024-12-05 11:07:19.923] [smf_n4 ] [info] handle_receive(16 bytes)
+[2024-12-05 11:07:19.923] [smf_n4 ] [debug] handle_receive_pfcp_msg msg type 2 length 12
+[2024-12-05 11:07:24.922] [smf_n4 ] [info] TIME-OUT event timer id 6
+[2024-12-05 11:07:29.924] [smf_n4 ] [info] TIME-OUT event timer id 7
+[2024-12-05 11:07:29.924] [smf_n4 ] [info] PFCP HEARTBEAT PROCEDURE hash 2252843200 starting
+[2024-12-05 11:07:29.924] [smf_n4 ] [info] handle_receive(16 bytes)
+[2024-12-05 11:07:29.924] [smf_n4 ] [debug] handle_receive_pfcp_msg msg type 2 length 12
+[2024-12-05 11:07:34.924] [smf_n4 ] [info] TIME-OUT event timer id 10
+[2024-12-05 11:07:39.924] [smf_n4 ] [info] TIME-OUT event timer id 11
+[2024-12-05 11:07:39.924] [smf_n4 ] [info] PFCP HEARTBEAT PROCEDURE hash 2252843200 starting
+[2024-12-05 11:07:39.925] [smf_n4 ] [info] handle_receive(16 bytes)
+[2024-12-05 11:07:39.925] [smf_n4 ] [debug] handle_receive_pfcp_msg msg type 2 length 12

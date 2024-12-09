@@ -1,6 +1,6 @@
 1- install minikube
-2- installer conntrack crictl cri-dockerd
-3- run minikube: sudo minikube start --driver=none
+2- install conntrack crictl cri-dockerd
+3- run minikube: minikube start --driver=none
 
 https://github.com/kubernetes/minikube/issues/9399 >> --driver=docker
 
